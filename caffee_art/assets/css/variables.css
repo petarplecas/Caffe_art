@@ -1,0 +1,100 @@
+/*---------------------------------------------*/
+/* CSS CUSTOM PROPERTIES - COLOR SYSTEM */
+/*---------------------------------------------*/
+
+:root {
+  /* ========================================
+     BRAND COLORS - Coffee/Gold Theme
+     ======================================== */
+
+  --gold-primary: #d59a44;    /* Main coffee gold - buttons, accents, borders */
+  --gold-light: #f7b14b;      /* Lighter gold - hover states, highlights */
+  --gold-dark: #b9863c;       /* Darker gold - active states, deep accents */
+
+  /* ========================================
+     CAFE VIBOVI - Topli Tones
+     ======================================== */
+
+  --cream: #f5e6d3;           /* Krem - subtle backgrounds, warmth */
+  --espresso: #3e2723;        /* Espresso brown - rich dark text */
+  --caramel: #c4965c;         /* Caramel - alternative accent between gold tones */
+
+  /* ========================================
+     NEUTRAL COLORS - Dark Tones
+     ======================================== */
+
+  --dark-primary: #1c1c1c;    /* Main dark - overlays, dark backgrounds (RGB: 28,28,28) */
+  --dark-warm: #262019;       /* Warm dark brown - menu cards, rich sections (RGB: 38,32,25) */
+  --black: #000000;           /* Pure black - shadows, gradients */
+
+  /* ========================================
+     NEUTRAL COLORS - Light Tones
+     ======================================== */
+
+  --white: #ffffff;           /* Pure white - main backgrounds, light text */
+  --gray-lightest: #f8f8f8;   /* Very light gray - subtle section backgrounds */
+  --gray-light: #efefef;      /* Light gray - text on dark backgrounds */
+  --gray-medium: #bdc3c7;     /* Medium gray - subtext, muted elements */
+  --gray-dark: #555555;       /* Dark gray - main body text */
+
+  /* ========================================
+     OPACITY VALUES
+     Used for creating transparent variations
+     ======================================== */
+
+  --opacity-overlay-dark: 0.98;    /* Very opaque - mobile menu, modals */
+  --opacity-overlay-medium: 0.95;  /* Opaque - sticky nav, overlays */
+  --opacity-overlay-light: 0.50;   /* Semi-transparent - header overlay */
+  --opacity-hover: 0.85;           /* Gallery overlay, hover effects */
+  --opacity-subtle: 0.30;          /* Subtle hover, shadows */
+  --opacity-border: 0.20;          /* Very subtle borders, dividers */
+
+  /* ========================================
+     RGB VALUES (for rgba() usage)
+     Extract RGB components for opacity control
+     ======================================== */
+
+  /* Gold colors */
+  --gold-primary-rgb: 213, 154, 68;    /* #d59a44 */
+
+  /* Dark colors */
+  --dark-primary-rgb: 28, 28, 28;      /* #1c1c1c */
+  --dark-warm-rgb: 38, 32, 25;         /* #262019 */
+  --black-rgb: 0, 0, 0;                /* #000000 */
+}
+
+/* ========================================
+   UTILITY CLASSES - Quick Color Application
+   ======================================== */
+
+/* Text Colors */
+.text-gold { color: var(--gold-primary) !important; }
+.text-gold-light { color: var(--gold-light) !important; }
+.text-gold-dark { color: var(--gold-dark) !important; }
+.text-cream { color: var(--cream) !important; }
+.text-espresso { color: var(--espresso) !important; }
+.text-white { color: var(--white) !important; }
+.text-gray { color: var(--gray-dark) !important; }
+.text-gray-light { color: var(--gray-light) !important; }
+
+/* Background Colors */
+.bg-gold { background-color: var(--gold-primary) !important; }
+.bg-gold-light { background-color: var(--gold-light) !important; }
+.bg-dark { background-color: var(--dark-primary) !important; }
+.bg-dark-warm { background-color: var(--dark-warm) !important; }
+.bg-cream { background-color: var(--cream) !important; }
+.bg-white { background-color: var(--white) !important; }
+.bg-gray-lightest { background-color: var(--gray-lightest) !important; }
+
+/* Border Colors */
+.border-gold { border-color: var(--gold-primary) !important; }
+.border-gold-light { border-color: var(--gold-light) !important; }
+.border-gold-dark { border-color: var(--gold-dark) !important; }
+.border-gray { border-color: var(--gray-medium) !important; }
+.border-white { border-color: var(--white) !important; }
+
+/* Hover State Helpers */
+.hover-gold:hover { color: var(--gold-primary) !important; }
+.hover-gold-light:hover { color: var(--gold-light) !important; }
+.hover-bg-gold:hover { background-color: var(--gold-primary) !important; }
+.hover-bg-gold-dark:hover { background-color: var(--gold-dark) !important; }

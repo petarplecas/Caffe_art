@@ -1,0 +1,22 @@
+/*---------------------------------------------*/
+/* ABOUT SECTION (O nama) */
+/*---------------------------------------------*/
+
+.o-nama-naslov{
+    background-color: #f5f0eb;
+}
+
+.o-nama-naslov h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.o-nama-naslov .o-nama-glavni-tekst{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Icon container styling */
+.icon-container i {
+    color: var(--gold-primary);
+}
