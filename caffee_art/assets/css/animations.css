@@ -1,0 +1,90 @@
+/*---------------------------------------------*/
+/* CUSTOM ANIMATIONS */
+/*---------------------------------------------*/
+
+/* Keyframe Definitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.animate-on-scroll.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+.animate-on-scroll.fade-in {
+    animation-name: fadeIn;
+}
+
+.animate-on-scroll.fade-in-up {
+    animation-name: fadeInUp;
+}
+
+.animate-on-scroll.slide-in-left {
+    animation-name: slideInLeft;
+}
+
+.animate-on-scroll.slide-in-right {
+    animation-name: slideInRight;
+}
+
+/* Delay variations for staggered animations */
+.animate-on-scroll.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-on-scroll.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-on-scroll.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.animate-on-scroll.delay-4 {
+    animation-delay: 0.4s;
+}

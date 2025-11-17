@@ -1,0 +1,71 @@
+/*---------------------------------------------*/
+/* MODERN LAYOUT SYSTEM - CSS Grid & Flexbox */
+/*---------------------------------------------*/
+
+/* Container for centering content with max-width */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Row - Flexbox container for flexible layouts */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Grid system for equal columns */
+.row.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.row.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.row.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Legacy grid support - 4 column layout */
+.col.span-1-of-4 {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Responsive grid - auto-fit columns based on min-width */
+.row.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .row.grid-4,
+    .row.grid-3,
+    .row.grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .col.span-1-of-4 {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .row {
+        gap: 15px;
+    }
+}

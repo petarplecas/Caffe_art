@@ -1,0 +1,160 @@
+/*---------------------------------------------*/
+/* CONTACT */
+/*---------------------------------------------*/
+
+.section-contact{
+    padding: 0px;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    /* Initial state - no background for lazy loading */
+    background-color: var(--dark-primary);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 0.3s ease;
+}
+
+/* Lazy loaded background - only loads when visible */
+.section-contact.background-loaded {
+    /* WebP with JPG fallback */
+    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))), url(../img/backgrounds/calendar.jpg);
+    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))),
+                      -webkit-image-set(
+                        url(../img/backgrounds/calendar.webp) 1x
+                      );
+    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))),
+                      image-set(
+                        url(../img/backgrounds/calendar.webp) type("image/webp") 1x,
+                        url(../img/backgrounds/calendar.jpg) type("image/jpeg") 1x
+                      );
+}
+
+.contact-container {
+    display: flex;
+    margin: 0 40px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contact-column {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-heading {
+    color: var(--gray-light);
+    text-transform: none;
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.contact-heading:after {
+    display: block;
+    height: 2px;
+    background-color: var(--gold-primary);
+    content: " ";
+    width: 80px;
+    margin: 15px auto 20px;
+}
+
+/* Social media icons - horizontal */
+.contact-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-social a {
+    color: var(--gold-primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-social a:hover {
+    transform: scale(1.2);
+    color: var(--gold-light);
+}
+
+.contact-social i {
+    font-size: 1.5rem;
+}
+
+/* Contact info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info > span {
+    font-size: 18px;
+    color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    font-size: 1.05rem;
+    color: var(--gold-primary);
+    min-width: 25px;
+}
+
+/* Working hours */
+.working-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hours-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(var(--gold-primary-rgb), var(--opacity-subtle));
+    text-align: center;
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row .days {
+    color: var(--gold-primary);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.hours-row .time {
+    color: var(--gray-light);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Google Maps container styles */
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 300px;
+    width: 300px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 300px;
+    width: 300px;
+    border: 3px solid var(--gold-primary);
+}
