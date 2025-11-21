@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": {
+      "home": "Caffe Bar Art - Početna",
+      "bar": "Caffe Bar Art - Bar",
+      "gallery": "Caffe Bar Art - Galerija",
+      "contact": "Caffe Bar Art - Kontakt"
+    }
+  },
+  "nav": {
+    "bar": "Bar",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "logo_alt": "Caffe Bar Art Logo"
+  },
+  "header": {
+    "title": "Caffe Bar Art",
+    "tagline": "Kuća dobre kafe i još bolje atmosfere."
+  },
+  "home": {
+    "intro": "Caffe Bar Art lako je pronaći u centru sela Žitište na Trgu Oslobođenja - mesto gde se tradicija i moderna atmosfera savršeno stapaju. Pružamo gostima jedinstveno iskustvo koje spaja kvalitet, toplinu i autentičnost. Naša bašta, okružena zelenilom i senkom starih stabala, predstavlja pravu oazu mira. Bilo da tražite jutarnju dozu energije uz aromatičnu kafu ili opušteno veče uz osvežavajuće piće, ovde ćete pronaći svoj kutak za uživanje.",
+    "bar_section": {
+      "title": "Bar",
+      "text1": "Naša bogata karta pića zadovoljiće svaki ukus. Od najboljih domaćih i svetskih piva, preko vrhunskih žestokih pića, do osvežavajućih koktela i bezalkoholnih napitaka.",
+      "text2": "Uz svaki napitak dolazi pažljivo odabrana atmosfera i prijatno okruženje u kome možete uživati sa prijateljima.",
+      "button": "BAR"
+    },
+    "gallery_section": {
+      "title": "Ambijent",
+      "text1": "Zavirite u naš svet kroz objektiv. Naša galerija prikazuje trenutke opuštanja, sjajne napitke i nezaboravnu atmosferu koja vlada u Caffe Bar Art.",
+      "text2": "Od jutarnje kafe do večernjih dešavanja, svaki trenutak je poseban i vredan sećanja.",
+      "button": "GALERIJA"
+    }
+  },
+  "bar": {
+    "page_title": "Karta pića",
+    "subtitle": "Uživajte u našoj bogatoj ponudi pića",
+    "currency": "din",
+    "sections": {
+      "non_alcoholic": "Bezalkoholna pića",
+      "alcoholic": "Alkoholna pića",
+      "combos": "Combo ponude",
+      "snacks": "Grickalice"
+    }
+  },
+  "gallery": {
+    "title": "Galerija",
+    "images": {
+      "garden": "Bašta",
+      "cedevita": "Cedevita",
+      "cockta": "Cockta",
+      "ambiance": "Ambijent",
+      "coffee": "Kafa",
+      "lavazza": "Lavazza kafa",
+      "logo": "Logo Art",
+      "plazma_shake": "Plazma shake",
+      "romer_water": "Römer voda",
+      "sign": "Znak Art"
+    }
+  },
+  "contact": {
+    "about": {
+      "title": "O nama",
+      "text": "Kafić koji uspešno posluje dugi niz godina u vlasništvu porodice Milinović. Iz godine u godinu rastemo, širimo se i pružamo žiteljima Žitišta i okolnih mesta prijatan ugođaj za kafu, ili večernje druženje.",
+      "atmosphere": {
+        "title": "Atmosfera",
+        "text": "Ugođaj u našoj bašti daje specifičan ukus našoj kafi. Petkom i subotom se u večernjim satima okrećemo nekim bržim ritmima, omogućavajući najbolji provod u okolini."
+      },
+      "beers": {
+        "title": "Piva",
+        "text": "Veliki izbor piva iz Jelen grupacije, neće ostaviti nikoga žednim. Obratite pažnju na naše akcije povodom sportskih događaja, popićete Stelu, Staropramen ili Barvariu ispod cene."
+      },
+      "wines": {
+        "title": "Vina",
+        "text": "Vina Zvonka Bogdana zarumeniće i najbleđa lica. Ako vam je subotička vinarija van palete ukusa, uvek možete probati nešto od BlaBla vina."
+      },
+      "coffee": {
+        "title": "Kafa",
+        "text": "Naša Housbrandt kafa, sa svojim specifičnim ukusom daće Vam dodatni nalet energije, da prebrodite bilo kakvu prepreku koja Vas je taj dan snašla."
+      }
+    }
+  },
+  "footer": {
+    "working_hours": {
+      "title": "Radno vreme",
+      "weekdays": "Ponedeljak - Četvrtak",
+      "weekend": "Petak - Subota",
+      "sunday": "Nedelja"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "address": "Trg Oslobođenja bb"
+    }
+  }
+}

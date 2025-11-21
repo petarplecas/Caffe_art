@@ -1,107 +1,399 @@
 /*---------------------------------------------*/
-/* MENU SECTION (Karta pića) */
+/* DRINKS MENU SECTION - MODERN DESIGN */
 /*---------------------------------------------*/
 
-.header-title {
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
+/* Color variables */
+:root {
+    --menu-bg: #0f3d3e;
+    --menu-accent: #ffb88c;
+    --menu-text: #ffffff;
+    --menu-secondary: #a8b2b8;
+    --menu-border: rgba(255, 184, 140, 0.2);
 }
 
+/* Section container */
 .section-menu {
-    padding: 60px 20px;
-    background-color: #f5f0eb;
+    background-color: var(--menu-bg);
+    padding: 80px 0;
+    min-height: 100vh;
 }
 
-/* Menu grid layout */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
-/* Menu card */
-.menu-card {
-    background: linear-gradient(135deg, rgba(var(--dark-warm-rgb), var(--opacity-overlay-medium)) 0%, rgba(var(--black-rgb), var(--opacity-overlay-medium)) 100%);
-    border-radius: 15px;
-    padding: 40px 30px;
-    box-shadow: 0 10px 30px rgba(var(--black-rgb), var(--opacity-subtle));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    min-height: 400px;
-}
-
-.menu-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(var(--gold-primary-rgb), var(--opacity-subtle));
-}
-
-/* Card icon */
-.menu-card-icon {
+/* Menu header */
+.menu-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
+    animation: fadeInDown 0.8s ease;
 }
 
-.menu-card-icon i {
-    font-size: 48px;
-    color: var(--gold-primary);
-}
-
-/* Card title */
-.menu-card-title {
-    color: var(--gold-primary);
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
+.menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--menu-accent);
+    margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
-.menu-card-title:after {
-    display: block;
-    height: 2px;
-    background-color: var(--gold-primary);
-    content: " ";
-    width: 60px;
-    margin: 15px auto;
+.menu-subtitle {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: var(--menu-secondary);
+    font-style: italic;
 }
 
-/* Card list */
-.menu-card-list {
-    list-style: none;
-    padding: 0;
+/* Main menu container - Masonry layout using CSS columns */
+.drinks-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    column-count: 2;
+    column-gap: 60px;
+}
+
+/* Section headers for major menu divisions */
+.menu-section-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: avoid;
+    page-break-after: avoid;
+    margin: 60px 0 40px 0;
+    text-align: center;
+    column-span: all;
+    width: 100%;
+}
+
+.menu-section-header:first-child {
+    margin-top: 0;
+}
+
+.menu-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--menu-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin: 0;
-    flex-grow: 1;
+    padding-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--menu-accent);
+}
+
+/* Category section */
+.menu-category {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 100%;
+}
+
+.menu-category:nth-child(1) { animation-delay: 0.1s; }
+.menu-category:nth-child(2) { animation-delay: 0.2s; }
+.menu-category:nth-child(3) { animation-delay: 0.3s; }
+.menu-category:nth-child(4) { animation-delay: 0.4s; }
+.menu-category:nth-child(5) { animation-delay: 0.5s; }
+.menu-category:nth-child(6) { animation-delay: 0.6s; }
+.menu-category:nth-child(7) { animation-delay: 0.7s; }
+.menu-category:nth-child(8) { animation-delay: 0.8s; }
+
+/* Category header */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.category-icon {
+    font-size: 1.8rem;
+    color: var(--menu-accent);
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--menu-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+.category-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--menu-accent), transparent);
+    margin-bottom: 25px;
+}
+
+/* Drinks list */
+.drinks-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 20px;
 }
 
-.menu-card-list li {
-    color: var(--gray-light);
-    padding: 12px 0;
-    font-size: 18px;
-    text-align: center;
-    border-bottom: 1px solid rgba(var(--gold-primary-rgb), var(--opacity-border));
-    transition: all 0.2s ease;
-}
-
-.menu-card-list li:last-child {
-    border-bottom: none;
-}
-
-.menu-card-list li:hover {
-    color: var(--gold-primary);
-    padding-left: 10px;
-}
-
-/* Legacy styles for old structure - keeping for backwards compatibility */
-.row-style {
+/* Individual drink item */
+.drink-item {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--menu-border);
+    transition: all 0.3s ease;
+}
+
+.drink-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.drink-item:hover {
+    transform: translateX(5px);
+    border-bottom-color: var(--menu-accent);
+}
+
+/* Drink info (left side) */
+.drink-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.drink-name {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--menu-text);
+    line-height: 1.4;
+}
+
+.drink-volume {
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    color: var(--menu-secondary);
+    font-style: italic;
+}
+
+/* Drink price (right side) */
+.drink-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--menu-accent);
+    white-space: nowrap;
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*---------------------------------------------*/
+/* RESPONSIVE DESIGN */
+/*---------------------------------------------*/
+
+/* Tablets (1024px and below) */
+@media only screen and (max-width: 1024px) {
+    .menu-title {
+        font-size: 3rem;
+    }
+
+    .drinks-menu-container {
+        column-gap: 50px;
+    }
+
+    .menu-section-title {
+        font-size: 2.2rem;
+    }
+
+    .category-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets portrait (768px and below) */
+@media only screen and (max-width: 768px) {
+    .section-menu {
+        padding: 60px 0;
+    }
+
+    .menu-header {
+        margin-bottom: 50px;
+    }
+
+    .menu-title {
+        font-size: 2.5rem;
+    }
+
+    .menu-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Single column layout */
+    .drinks-menu-container {
+        column-count: 1;
+        padding: 0 25px;
+    }
+
+    .menu-section-header {
+        margin: 50px 0 35px 0;
+    }
+
+    .menu-section-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .menu-category {
+        margin-bottom: 45px;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .drink-name {
+        font-size: 1rem;
+    }
+
+    .drink-price {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media only screen and (max-width: 480px) {
+    .section-menu {
+        padding: 50px 0;
+    }
+
+    .menu-header {
+        margin-bottom: 40px;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .menu-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .drinks-menu-container {
+        padding: 0 15px;
+    }
+
+    .menu-section-header {
+        margin: 40px 0 30px 0;
+    }
+
+    .menu-section-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        padding-bottom: 15px;
+    }
+
+    .menu-section-title::after {
+        width: 60px;
+        height: 2px;
+    }
+
+    .menu-category {
+        margin-bottom: 35px;
+    }
+
+    .category-header {
+        gap: 10px;
+    }
+
+    .category-icon {
+        font-size: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .drinks-list {
+        gap: 15px;
+    }
+
+    .drink-item {
+        padding-bottom: 12px;
+    }
+
+    .drink-name {
+        font-size: 0.95rem;
+    }
+
+    .drink-volume {
+        font-size: 0.85rem;
+    }
+
+    .drink-price {
+        font-size: 1rem;
+        margin-left: 15px;
+    }
+}
+
+/* Small mobile (375px and below) */
+@media only screen and (max-width: 375px) {
+    .menu-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-section-title {
+        font-size: 1.4rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+
+    .drink-name {
+        font-size: 0.9rem;
+    }
+
+    .drink-volume {
+        font-size: 0.8rem;
+    }
+
+    .drink-price {
+        font-size: 0.95rem;
+    }
 }

@@ -3,20 +3,45 @@
 /*---------------------------------------------*/
 
 .o-nama-naslov{
-    background-color: #f5f0eb;
+    background-image: url('../img/backgrounds/cement-concrete-textured.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.o-nama-naslov::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 248, 248, 0.5);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .o-nama-naslov h2 {
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .o-nama-naslov .o-nama-glavni-tekst{
     margin-bottom: 30px;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 /* Icon container styling */
+.icon-container {
+    position: relative;
+    z-index: 1;
+}
+
 .icon-container i {
     color: var(--gold-primary);
 }

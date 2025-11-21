@@ -1,0 +1,454 @@
+/* ============================================
+   HOME PAGE SPLIT SECTIONS
+   ============================================ */
+
+/* Intro Section - Menu card style with elevation */
+.intro-section {
+    background-image:
+        linear-gradient(135deg, rgba(12, 48, 50, 0.95) 0%, rgba(15, 61, 62, 0.9) 50%, rgba(20, 70, 72, 0.92) 100%),
+        url('../img/backgrounds/cement-concrete-textured.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 184, 140, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.intro-content {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding: 3rem 2.5rem;
+    border: 2px solid rgba(255, 184, 140, 0.3);
+    background-color: rgba(15, 61, 62, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.intro-content::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #ffb88c;
+}
+
+.intro-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffb88c;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-content p {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.intro-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Section container */
+.section-split {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+}
+
+/* Bar section - slightly elevated */
+.section-split:not(.reverse) {
+    z-index: 8;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Gallery section - more elevated */
+.section-split.reverse {
+    z-index: 9;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Image half - now supporting slider */
+.section-split-image {
+    flex: 0 0 50%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider specific styles */
+.image-slider {
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-x pan-y;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.image-slider.dragging {
+    cursor: grabbing;
+}
+
+.slider-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.slider-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit;
+    animation: kenBurnsZoomOut 30s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.slider-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Legacy support for non-slider images */
+.section-split-image:not(.image-slider)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: inherit;
+    animation: kenBurnsZoomOut 30s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Ken Burns slow zoom out effect - creates living image illusion */
+@keyframes kenBurnsZoomOut {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Content half */
+.section-split-content {
+    flex: 0 0 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-image: url('../img/backgrounds/cement-concrete-textured.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.section-split-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 248, 248, 0.5);
+    z-index: 0;
+}
+
+.section-split-content-inner {
+    max-width: 600px;
+    width: 100%;
+    padding: 4rem 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Bar section - align text to LEFT */
+.section-split:not(.reverse) .section-split-content-inner {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-split:not(.reverse) .section-split-content-inner h2,
+.section-split:not(.reverse) .section-split-content-inner p,
+.section-split:not(.reverse) .section-split-content-inner .btn-modern {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Ambijent section - align text to RIGHT */
+.section-split.reverse .section-split-content-inner {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.section-split.reverse .section-split-content-inner h2,
+.section-split.reverse .section-split-content-inner p,
+.section-split.reverse .section-split-content-inner .btn-modern {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.section-split-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.section-split-content p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+/* Modern Button - Transparent with border */
+.btn-modern {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6a4c3a;
+    background: transparent;
+    border: 2px solid #6a4c3a;
+    border-radius: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+/* Hover only on devices with mouse */
+@media (hover: hover) and (pointer: fine) {
+    .btn-modern:hover {
+        color: #fff;
+        background: linear-gradient(135deg, #6a4c3a 0%, #8b6f47 100%);
+        border-color: #8b6f47;
+        box-shadow: 0 8px 25px rgba(106, 76, 58, 0.3);
+    }
+}
+
+/* Remove focus/active effects */
+.btn-modern:focus,
+.btn-modern:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Responsive Design - Keep side-by-side layout on all devices */
+@media only screen and (max-width: 1024px) {
+    .intro-section {
+        padding: 4rem 2rem;
+    }
+
+    .intro-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .intro-content::after {
+        bottom: 1.8rem;
+        width: 90px;
+    }
+
+    .intro-content h2 {
+        font-size: 2.2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .intro-content p {
+        font-size: 1.1rem;
+    }
+
+    .section-split {
+        min-height: 70vh;
+    }
+
+    .section-split-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .section-split-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .intro-section {
+        padding: 4rem 1.5rem 3rem;
+        min-height: fit-content;
+    }
+
+    .intro-content {
+        padding: 2.5rem 2rem;
+    }
+
+    .intro-content::after {
+        bottom: 1.5rem;
+        width: 80px;
+        height: 2px;
+    }
+
+    .intro-content h2 {
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .section-split {
+        min-height: 85vh;
+    }
+
+    .section-split-content-inner {
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .section-split-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-split-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-modern {
+        padding: 0.9rem 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .intro-section {
+        padding: 3.5rem 1rem 2.5rem;
+        min-height: fit-content;
+    }
+
+    .intro-content {
+        padding: 2rem 1.5rem;
+        border-width: 1.5px;
+    }
+
+    .intro-content::after {
+        bottom: 1.2rem;
+        width: 60px;
+        height: 2px;
+    }
+
+    .intro-content h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .intro-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .section-split {
+        min-height: 85vh;
+    }
+
+    .section-split-content-inner {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-split-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .section-split-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+    }
+
+    .btn-modern {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
+}

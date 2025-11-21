@@ -35,13 +35,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+    /* Initialize Twemoji for emoji flags */
+    function initTwemoji() {
+        if (typeof twemoji !== 'undefined') {
+            // Parse flag icons to convert emoji to images
+            twemoji.parse(document.body, {
+                folder: 'svg',
+                ext: '.svg',
+                className: 'emoji-icon'
+            });
+        }
+    }
+
     // Load header navigation
     loadTemplate('#header-nav', 'components/header.html', function() {
         initMobileMenu();
+        setActiveNavLink();
+        // Initialize i18n after header is loaded (for language switcher)
+        if (typeof CaffeArtI18n !== 'undefined' && CaffeArtI18n.init) {
+            CaffeArtI18n.init();
+        }
+        // Initialize Twemoji for flag emojis
+        setTimeout(initTwemoji, 100);
     });
 
     // Load footer
-    loadTemplate('#footer-container', 'components/footer.html');
+    loadTemplate('#footer-container', 'components/footer.html', function() {
+        // Re-apply translations to footer after it's loaded
+        if (typeof CaffeArtI18n !== 'undefined' && CaffeArtI18n.init) {
+            // Give it a small delay to ensure footer DOM is ready
+            setTimeout(function() {
+                CaffeArtI18n.init();
+            }, 100);
+        }
+    });
 
     /* Mobile Navigation */
     let scrollPosition = 0;
@@ -96,6 +123,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     menuIcon.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
+        });
+    }
+
+    /* Set active navigation link based on current page */
+    function setActiveNavLink() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.main-nav li a');
+
+        navLinks.forEach(function(link) {
+            const linkPage = link.getAttribute('href');
+
+            // Check if the link matches the current page
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            }
+            // Special case: if on index.html and no match found yet, don't mark anything
+            // (index.html doesn't appear in navigation)
         });
     }
 
@@ -243,4 +287,147 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize gallery lazy loading
     initGalleryLazyLoad();
+
+    /* ============================================
+       IMAGE SLIDER WITH SWIPE/DRAG FUNCTIONALITY
+       ============================================ */
+    function initImageSliders() {
+        const sliders = document.querySelectorAll('.image-slider');
+
+        sliders.forEach(function(slider) {
+            const track = slider.querySelector('.slider-track');
+            const slides = slider.querySelectorAll('.slider-item');
+
+            if (!slides.length) return;
+
+            // Set background images from data-bg attribute
+            slides.forEach(function(slide) {
+                const bgImage = slide.getAttribute('data-bg');
+                if (bgImage) {
+                    slide.style.backgroundImage = 'url(' + bgImage + ')';
+                }
+            });
+
+            let currentIndex = 0;
+            let startX = 0;
+            let startY = 0;
+            let isDragging = false;
+            let isHorizontalSwipe = null;
+            let startTime = 0;
+
+            // Function to show specific slide
+            function showSlide(index) {
+                // Ensure index is within bounds
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                currentIndex = index;
+
+                // Update slides
+                slides.forEach(function(slide, i) {
+                    slide.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            // Next slide
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            // Touch/Mouse events for swipe/drag
+
+            // Start drag/touch
+            function handleStart(e) {
+                isDragging = true;
+                isHorizontalSwipe = null;
+                startTime = Date.now();
+
+                if (e.type.includes('mouse')) {
+                    startX = e.pageX;
+                    startY = e.pageY;
+                } else {
+                    startX = e.touches[0].pageX;
+                    startY = e.touches[0].pageY;
+                }
+                slider.classList.add('dragging');
+            }
+
+            // End drag/touch
+            function handleEnd(e) {
+                if (!isDragging) return;
+
+                isDragging = false;
+                isHorizontalSwipe = null;
+                slider.classList.remove('dragging');
+
+                const endX = e.type.includes('mouse') ? e.pageX : e.changedTouches[0].pageX;
+                const diff = startX - endX;
+                const timeDiff = Date.now() - startTime;
+
+                // Swipe threshold: 50px or quick swipe (< 300ms)
+                const threshold = 50;
+                const isQuickSwipe = timeDiff < 300 && Math.abs(diff) > 30;
+
+                if (Math.abs(diff) > threshold || isQuickSwipe) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+            }
+
+            // Move - detect swipe direction and only prevent if horizontal
+            function handleMove(e) {
+                if (!isDragging) return;
+
+                const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                const currentY = e.type.includes('mouse') ? e.pageY : e.touches[0].pageY;
+
+                // Determine swipe direction on first move
+                if (isHorizontalSwipe === null) {
+                    const deltaX = Math.abs(currentX - startX);
+                    const deltaY = Math.abs(currentY - startY);
+
+                    // If horizontal movement is greater, it's a horizontal swipe
+                    isHorizontalSwipe = deltaX > deltaY;
+                }
+
+                // Only prevent default for horizontal swipes (image slider)
+                // Allow vertical swipes to scroll the page
+                if (isHorizontalSwipe) {
+                    e.preventDefault();
+                }
+            }
+
+            // Mouse events
+            slider.addEventListener('mousedown', handleStart);
+            slider.addEventListener('mouseup', handleEnd);
+            slider.addEventListener('mouseleave', function() {
+                if (isDragging) {
+                    isDragging = false;
+                    slider.classList.remove('dragging');
+                }
+            });
+            slider.addEventListener('mousemove', handleMove);
+
+            // Touch events
+            slider.addEventListener('touchstart', handleStart, { passive: true });
+            slider.addEventListener('touchend', handleEnd, { passive: true });
+            slider.addEventListener('touchmove', handleMove, { passive: false });
+
+            // Prevent accidental image drag
+            slider.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+            });
+        });
+    }
+
+    // Initialize sliders
+    initImageSliders();
 });

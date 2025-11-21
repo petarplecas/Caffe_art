@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,97 +19,58 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="icon" href="assets/img/logo/art_logo.jpg">
-        <title>Caffe Bar Art - Bar</title>
+        <title data-i18n="meta.title.bar">Caffe Bar Art - Bar</title>
+        <style>
+            /* Custom header background for Bar page */
+            header::before {
+                background-image: url(assets/img/backgrounds/calendar.jpg) !important;
+            }
+
+            /* Responsive header height */
+            @media only screen and (max-width: 768px) {
+                header {
+                    height: 75vh;
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                header {
+                    height: 70vh;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- HEADER / HOME SECTION -->
         <header id="home">
             <div id="header-nav"></div>
             <div class="header-text-box">
-                <h1>Caffe Bar Art</h1>
+                <h1 data-i18n="header.title">Caffe Bar Art</h1>
                 <div class="header-text-subbox">
-                    <a>
+                    <a data-i18n="header.tagline">
                     Kuća dobre kafe i još bolje atmosfere.
                     </a>
                 </div>
             </div>
         </header>
 
-        <!-- KARTA PIĆA SEKCIJA -->
+        <!-- DRINKS MENU SECTION -->
         <section class="section-menu" id="menu">
-            <div class="header-title">
-                <h2>Karta pića</h2>
+            <div class="menu-header">
+                <h2 class="menu-title" data-i18n="bar.page_title">Karta pića</h2>
+                <p class="menu-subtitle" data-i18n="bar.subtitle">Uživajte u našoj bogatoj ponudi pića</p>
             </div>
-            <div class="menu-grid">
-                <!-- Žestoka pića -->
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <i class="fas fa-cocktail"></i>
-                    </div>
-                    <h3 class="menu-card-title">Žestoka pića</h3>
-                    <ul class="menu-card-list">
-                        <li>Jagermaister</li>
-                        <li>Ballantine's</li>
-                        <li>Johny Walker</li>
-                        <li>Tequilla</li>
-                        <li>Viljamovka</li>
-                    </ul>
-                </div>
-
-                <!-- Piva -->
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <i class="fas fa-beer"></i>
-                    </div>
-                    <h3 class="menu-card-title">Piva</h3>
-                    <ul class="menu-card-list">
-                        <li>Jelen</li>
-                        <li>Heineken</li>
-                        <li>Hoegaarden</li>
-                        <li>Nikšićko</li>
-                        <li>Staropramen</li>
-                        <li>Corona Extra</li>
-                    </ul>
-                </div>
-
-                <!-- Hladna pića -->
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <i class="fas fa-glass-whiskey"></i>
-                    </div>
-                    <h3 class="menu-card-title">Hladna pića</h3>
-                    <ul class="menu-card-list">
-                        <li>Koka kola</li>
-                        <li>Fanta</li>
-                        <li>Gazirana voda</li>
-                        <li>Negazirana voda</li>
-                        <li>Red bul</li>
-                        <li>Ledeni čaj</li>
-                    </ul>
-                </div>
-
-                <!-- Topla pića -->
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                    <h3 class="menu-card-title">Topla pića</h3>
-                    <ul class="menu-card-list">
-                        <li>Espresso</li>
-                        <li>Machiato</li>
-                        <li>Caffe Latte</li>
-                        <li>Cappucciono</li>
-                        <li>Nes kafa</li>
-                        <li>Topla čokolada</li>
-                        <li>Čaj</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Menu will be dynamically loaded here -->
+            <div id="drinks-menu" class="drinks-menu-container"></div>
         </section>
 
         <!-- CONTACT SECTION (FOOTER) -->
         <div id="footer-container"></div>
 
     </body>
+    <!-- Twemoji for cross-platform emoji support -->
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/menu.js"></script>
 </html>

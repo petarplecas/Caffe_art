@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,25 +19,83 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
         <link rel="icon" href="./assets/img/logo/art_logo.jpg">
-        <title>Caffe Bar Art - Home</title>
+        <title data-i18n="meta.title.home">Caffe Bar Art - Početna</title>
     </head>
     <body>
         <!-- HEADER / HOME SECTION -->
         <header id="home">
             <div id="header-nav"></div>
             <div class="header-text-box">
-                <h1>Caffe Bar Art</h1>
+                <h1 data-i18n="header.title">Caffe Bar Art</h1>
                 <div class="header-text-subbox">
-                    <a>
+                    <a data-i18n="header.tagline">
                     Kuća dobre kafe i još bolje atmosfere.
                     </a>
                 </div>
             </div>
         </header>
 
+        <!-- INTRO SECTION -->
+        <section class="intro-section">
+            <div class="intro-content animate-on-scroll fade-in-up">
+                <p data-i18n="home.intro">
+                    Caffe Bar Art lako je pronaći u centru sela Žitište na Trgu Oslobođenja - mesto gde se tradicija i moderna atmosfera savršeno stapaju. Pružamo gostima jedinstveno iskustvo koje spaja kvalitet, toplinu i autentičnost. Naša bašta, okružena zelenilom i senkom starih stabala, predstavlja pravu oazu mira. Bilo da tražite jutarnju dozu energije uz aromatičnu kafu ili opušteno veče uz osvežavajuće piće, ovde ćete pronaći svoj kutak za uživanje.
+                </p>
+            </div>
+        </section>
+
+        <!-- BAR SECTION -->
+        <section class="section-split">
+            <div class="section-split-image image-slider" data-slider="bar">
+                <div class="slider-track">
+                    <div class="slider-item active" data-bg="assets/img/gallery/Cedevita.jpg"></div>
+                    <div class="slider-item" data-bg="assets/img/gallery/Cockta.jpg"></div>
+                    <div class="slider-item" data-bg="assets/img/gallery/Kafa.jpg"></div>
+                </div>
+            </div>
+            <div class="section-split-content">
+                <div class="section-split-content-inner animate-on-scroll fade-in-up">
+                    <h2 data-i18n="home.bar_section.title">Bar</h2>
+                    <p data-i18n="home.bar_section.text1">
+                        Naša bogata karta pića zadovoljiće svaki ukus. Od najboljih domaćih i svetskih piva, preko vrhunskih žestokih pića, do osvežavajućih koktela i bezalkoholnih napitaka.
+                    </p>
+                    <p data-i18n="home.bar_section.text2">
+                        Uz svaki napitak dolazi pažljivo odabrana atmosfera i prijatno okruženje u kome možete uživati sa prijateljima.
+                    </p>
+                    <a href="bar.html" class="btn-modern"><span data-i18n="home.bar_section.button">BAR</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="section-split reverse">
+            <div class="section-split-content">
+                <div class="section-split-content-inner animate-on-scroll fade-in-up">
+                    <h2 data-i18n="home.gallery_section.title">Ambijent</h2>
+                    <p data-i18n="home.gallery_section.text1">
+                        Zavirite u naš svet kroz objektiv. Naša galerija prikazuje trenutke opuštanja, sjajne napitke i nezaboravnu atmosferu koja vlada u Caffe Bar Art.
+                    </p>
+                    <p data-i18n="home.gallery_section.text2">
+                        Od jutarnje kafe do večernjih dešavanja, svaki trenutak je poseban i vredan sećanja.
+                    </p>
+                    <a href="gallery.html" class="btn-modern"><span data-i18n="home.gallery_section.button">GALERIJA</span></a>
+                </div>
+            </div>
+            <div class="section-split-image image-slider" data-slider="gallery">
+                <div class="slider-track">
+                    <div class="slider-item active" data-bg="assets/img/gallery/Basta.jpg"></div>
+                    <div class="slider-item" data-bg="assets/img/gallery/Home.jpg"></div>
+                    <div class="slider-item" data-bg="assets/img/gallery/Znak_art_1.jpg"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- CONTACT SECTION (FOOTER) -->
         <div id="footer-container"></div>
 
     </body>
+    <!-- Twemoji for cross-platform emoji support -->
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/i18n.js"></script>
     <script src="./assets/js/main.js"></script>
 </html>

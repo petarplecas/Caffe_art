@@ -18,7 +18,7 @@
 
     /* Header */
     header {
-        min-height: 100vh;
+        min-height: 80vh;
         height: auto;
     }
 
@@ -111,13 +111,13 @@
 
     /* Header */
     header {
-        min-height: 100vh;
-        height: auto;
+        height: 75vh;
+        min-height: 75vh;
         padding-top: 70px;
     }
 
     .header-text-box {
-        bottom: 40px;
+        bottom: 80px;
         left: 20px;
         right: 20px;
         max-width: 100%;
@@ -139,6 +139,11 @@
         z-index: 10001;
         margin: 20px 0 20px auto;
         line-height: 30px;
+    }
+
+    .nav-container {
+        position: static;
+        transform: none;
     }
 
     .main-nav {
@@ -320,6 +325,8 @@
 
     /* Header */
     header {
+        height: 70vh;
+        min-height: 70vh;
         padding-top: 60px;
     }
 
@@ -340,7 +347,7 @@
     }
 
     .header-text-box {
-        bottom: 30px;
+        bottom: 60px;
         left: 15px;
         right: 15px;
     }

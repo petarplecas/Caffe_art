@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": {
+      "home": "Caffe Bar Art - Home",
+      "bar": "Caffe Bar Art - Bar",
+      "gallery": "Caffe Bar Art - Gallery",
+      "contact": "Caffe Bar Art - Contact"
+    }
+  },
+  "nav": {
+    "bar": "Bar",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "logo_alt": "Caffe Bar Art Logo"
+  },
+  "header": {
+    "title": "Caffe Bar Art",
+    "tagline": "Home of great coffee and even better atmosphere."
+  },
+  "home": {
+    "intro": "Caffe Bar Art is easy to find in the center of Žitište village at Trg Oslobođenja - a place where tradition and modern atmosphere perfectly blend. We provide our guests with a unique experience that combines quality, warmth and authenticity. Our garden, surrounded by greenery and the shade of old trees, is a true oasis of peace. Whether you're looking for a morning energy boost with aromatic coffee or a relaxing evening with a refreshing drink, you'll find your corner of enjoyment here.",
+    "bar_section": {
+      "title": "Bar",
+      "text1": "Our rich drinks menu will satisfy every taste. From the best domestic and international beers, through premium spirits, to refreshing cocktails and soft drinks.",
+      "text2": "Every drink comes with a carefully selected atmosphere and a pleasant environment where you can enjoy time with friends.",
+      "button": "BAR"
+    },
+    "gallery_section": {
+      "title": "Ambiance",
+      "text1": "Peek into our world through the lens. Our gallery showcases moments of relaxation, great drinks and the unforgettable atmosphere that reigns at Caffe Bar Art.",
+      "text2": "From morning coffee to evening events, every moment is special and worth remembering.",
+      "button": "GALLERY"
+    }
+  },
+  "bar": {
+    "page_title": "Drinks Menu",
+    "subtitle": "Enjoy our rich selection of beverages",
+    "currency": "din",
+    "sections": {
+      "non_alcoholic": "Non-Alcoholic Drinks",
+      "alcoholic": "Alcoholic Drinks",
+      "combos": "Combo Deals",
+      "snacks": "Snacks"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "images": {
+      "garden": "Garden",
+      "cedevita": "Cedevita",
+      "cockta": "Cockta",
+      "ambiance": "Ambiance",
+      "coffee": "Coffee",
+      "lavazza": "Lavazza Coffee",
+      "logo": "Art Logo",
+      "plazma_shake": "Plazma Shake",
+      "romer_water": "Römer Water",
+      "sign": "Art Sign"
+    }
+  },
+  "contact": {
+    "about": {
+      "title": "About Us",
+      "text": "A café that has been successfully operating for many years, owned by the Milinović family. Year after year we grow, expand and provide the residents of Žitište and surrounding areas with a pleasant atmosphere for coffee or evening gatherings.",
+      "atmosphere": {
+        "title": "Atmosphere",
+        "text": "The ambiance in our garden gives a specific taste to our coffee. On Fridays and Saturdays in the evening hours, we turn to faster rhythms, providing the best entertainment in the area."
+      },
+      "beers": {
+        "title": "Beers",
+        "text": "A large selection of beers from the Jelen group will leave no one thirsty. Pay attention to our promotions during sporting events, you'll drink Stella, Staropramen or Bavaria below regular price."
+      },
+      "wines": {
+        "title": "Wines",
+        "text": "Zvonko Bogdan wines will bring color to even the palest faces. If the Subotica winery is outside your taste palette, you can always try something from BlaBla wines."
+      },
+      "coffee": {
+        "title": "Coffee",
+        "text": "Our Hausbrandt coffee, with its specific taste, will give you an extra burst of energy to overcome any obstacle that has befallen you that day."
+      }
+    }
+  },
+  "footer": {
+    "working_hours": {
+      "title": "Working Hours",
+      "weekdays": "Monday - Thursday",
+      "weekend": "Friday - Saturday",
+      "sunday": "Sunday"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Trg Oslobođenja bb"
+    }
+  }
+}

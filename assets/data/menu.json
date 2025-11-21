@@ -1,0 +1,331 @@
+{
+  "menu": {
+    "alcoholic_drinks": {
+      "toceno_pivo": {
+        "title": {
+          "sr": "Točeno pivo",
+          "en": "Draft Beer"
+        },
+        "items": [
+          { "name": "Jelen", "volume": 0.33, "price": 170 },
+          { "name": "Jelen", "volume": 0.5, "price": 220 },
+          { "name": "Stella Artois", "volume": 0.25, "price": 210 },
+          { "name": "Stella Artois", "volume": 0.5, "price": 350 },
+          { "name": "Blue Moon", "volume": 0.33, "price": 300 },
+          { "name": "Blue Moon", "volume": 0.5, "price": 430 },
+          { "name": "Bavaria", "volume": 0.25, "price": 190 },
+          { "name": "Bavaria", "volume": 0.5, "price": 330 }
+        ]
+      },
+      "vino": {
+        "title": {
+          "sr": "Vino",
+          "en": "Wine"
+        },
+        "items": [
+          { "name": "Bajilo - Belo Sila", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Belo Sauvignon", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Belo Tamjanika", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Rose", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Crveno Portugizer", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Crveno Cabernet Sauvignon", "volume": 0.5, "price": 600 },
+          { "name": "Bajilo - Belo Sila", "volume": 0.2, "price": 230 },
+          { "name": "Bajilo - Belo Sauvignon", "volume": 0.2, "price": 230 },
+          { "name": "Bajilo - Belo Tamjanika", "volume": 0.2, "price": 230 },
+          { "name": "Bajilo - Rose", "volume": 0.2, "price": 230 },
+          { "name": "Bajilo - Crveno Portugizer", "volume": 0.2, "price": 230 },
+          { "name": "Bajilo - Crveno Cabernet Sauvignon", "volume": 0.2, "price": 230 },
+          { "name": "Somersby", "volume": 0.33, "price": 280 },
+          { "name": "Aspall Cider", "volume": 0.33, "price": 280 }
+        ]
+      },
+      "domaca_rakija": {
+        "title": {
+          "sr": "Domaća rakija",
+          "en": "Homemade Rakija"
+        },
+        "items": [
+          { "name": "Naša Viljamovka", "volume": 0.03, "price": 210 },
+          { "name": "Naša Kajsija", "volume": 0.03, "price": 210 },
+          { "name": "Naša Šljivovica", "volume": 0.03, "price": 180 },
+          { "name": "Zarić Dunja Nostalgija", "volume": 0.03, "price": 270 },
+          { "name": "Zarić Kajsija Magija", "volume": 0.03, "price": 270 },
+          { "name": "Zarić Šljiva Kraljica", "volume": 0.03, "price": 270 },
+          { "name": "Loza", "volume": 0.03, "price": 220 }
+        ]
+      },
+      "rum": {
+        "title": {
+          "sr": "Rum",
+          "en": "Rum"
+        },
+        "items": [
+          { "name": "Havana Club", "volume": 0.03, "price": 210 },
+          { "name": "Bacardi", "volume": 0.03, "price": 210 }
+        ]
+      },
+      "tequila": {
+        "title": {
+          "sr": "Tequila",
+          "en": "Tequila"
+        },
+        "items": [
+          { "name": "Two Fingers", "volume": 0.03, "price": 250 },
+          { "name": "El Jimador Reposado", "volume": 0.03, "price": 250 }
+        ]
+      },
+      "vermut": {
+        "title": {
+          "sr": "Vermut",
+          "en": "Vermouth"
+        },
+        "items": [
+          { "name": "Martini Dry", "volume": 0.05, "price": 190 },
+          { "name": "Martini Rosso", "volume": 0.05, "price": 190 },
+          { "name": "Martini Bianco", "volume": 0.05, "price": 190 }
+        ]
+      },
+      "gin": {
+        "title": {
+          "sr": "Gin",
+          "en": "Gin"
+        },
+        "items": [
+          { "name": "Beefeater", "volume": 0.03, "price": 180 },
+          { "name": "Bombay Sapphire", "volume": 0.03, "price": 250 }
+        ]
+      },
+      "whiskey": {
+        "title": {
+          "sr": "Whiskey & Bourbon",
+          "en": "Whiskey & Bourbon"
+        },
+        "items": [
+          { "name": "Jack Daniel's", "volume": 0.03, "price": 290 },
+          { "name": "Jameson", "volume": 0.03, "price": 250 },
+          { "name": "Chivas Regal", "volume": 0.03, "price": 350 },
+          { "name": "Johnie Walker Red", "volume": 0.03, "price": 230 },
+          { "name": "Johnie Walker Black", "volume": 0.03, "price": 330 },
+          { "name": "Makers Mark", "volume": 0.03, "price": 380 },
+          { "name": "Jim Beam", "volume": 0.03, "price": 250 }
+        ]
+      },
+      "cognac": {
+        "title": {
+          "sr": "Cognac & Brandy",
+          "en": "Cognac & Brandy"
+        },
+        "items": [
+          { "name": "Hennessy", "volume": 0.03, "price": 380 },
+          { "name": "Rubin Vinjak 5", "volume": 0.05, "price": 260 },
+          { "name": "Rubin Vinjak", "volume": 0.05, "price": 190 },
+          { "name": "Stock", "volume": 0.05, "price": 240 }
+        ]
+      },
+      "likeri": {
+        "title": {
+          "sr": "Likeri",
+          "en": "Liqueurs"
+        },
+        "items": [
+          { "name": "Jägermeister", "volume": 0.03, "price": 220 },
+          { "name": "Gorki List", "volume": 0.05, "price": 190 },
+          { "name": "Campari", "volume": 0.03, "price": 220 },
+          { "name": "Aperol", "volume": 0.03, "price": 240 },
+          { "name": "Baileys", "volume": 0.03, "price": 250 },
+          { "name": "Archers", "volume": 0.03, "price": 150 },
+          { "name": "Malibu", "volume": 0.03, "price": 150 },
+          { "name": "Kahlua", "volume": 0.03, "price": 180 },
+          { "name": "Cointreau", "volume": 0.03, "price": 200 },
+          { "name": "DeKuyper", "volume": 0.03, "price": 170 }
+        ]
+      },
+      "cocktails": {
+        "title": {
+          "sr": "Kokteli",
+          "en": "Cocktails"
+      },
+      "items": [
+        { "name": "Gin Tonic", "price": 340 },
+        { "name": "Aperol Spritz", "price": 400 },
+        { "name": "Blue Lagoon", "price": 450 },
+        { "name": "Lynchburg Lemonade", "price": 600 },
+        { "name": "Pina Colada", "price": 450 },
+        { "name": "Sex on the Beach", "price": 450 },
+        { "name": "Cuba Libre", "price": 450 },
+        { "name": "Negroni", "price": 450 },
+        { "name": "Long Island Iced Tea", "price": 900 },
+        { "name": "Blue Frog", "price": 1800 },
+        { "name": "B52", "price": 200 },
+        { "name": "Monkez Brain", "price": 200 }
+        ]
+      },
+      "grickalice": {
+        "title": {
+          "sr": "Grickalice",
+          "en": "Snacks"
+        },
+        "items": [
+          { "name": "Kikiriki", "price": 150 },
+          { "name": "Chipsy", "price": 150 },
+          { "name": "Kokice", "price": 150 }
+        ]
+      },
+      "hot_drinks": {
+        "title": {
+          "sr": "Topli napici",
+          "en": "Hot Drinks"
+        },
+        "items": [
+          { "name": "Espresso", "price": 130 },
+          { "name": "Cappuccino", "price": 140 },
+          { "name": "Machiato", "price": 140 },
+          { "name": "Espresso sa Sojinim-Bademovim", "price": 170 },
+          { "name": "Latte", "price": 190 },
+          { "name": "Mocha Coffee", "price": 190 },
+          { "name": "Irish Coffee", "price": 380 },
+          { "name": "Baileys Coffee", "price": 300 },
+          { "name": "Nescafe sa šlagom", "price": 150 },
+          { "name": "Domaća kafa", "price": 130 },
+          { "name": "Topla Čokolada", "price": 240 },
+          { "name": "Ronnefeldt čaj", "price": 180 },
+          { "name": "Kafa sa ukusom po izboru", "price": 240 },
+          { "name": "Med kesica", "price": 20 },
+          { "name": "Cimet štapić", "price": 30 }
+        ]
+      },
+      "iced_coffee": {
+        "title": {
+          "sr": "Ledena kafa",
+          "en": "Iced Coffee"
+        },
+        "items": [
+          { "name": "Iced Coffee", "price": 200 },
+          { "name": "Freddo", "price": 220 },
+          { "name": "Frape/Milkshake", "price": 190 },
+          { "name": "Art Plazma Shake", "price": 300 },
+          { "name": "Espresso Plazma Shake", "price": 390 }
+        ]
+      },
+      "fresh_juices": {
+        "title": {
+          "sr": "Ceđeni sokovi",
+          "en": "Fresh Juices"
+        },
+        "items": [
+          { "name": "Limunada", "price": 170 },
+          { "name": "Ceđena Pomorandža", "price": 300 },
+          { "name": "Ceđena Jabuka", "price": 230 },
+          { "name": "Jabuka Orah", "price": 270 },
+          { "name": "Top Tempo (Jabuka, Narandža, Šargarepa)", "price": 300 },
+          { "name": "Jabuka Narandža", "price": 250 },
+          { "name": "Đumbir shot", "price": 100 }
+        ]
+      },
+      "mineral_water": {
+        "title": {
+          "sr": "Mineralna voda",
+          "en": "Mineral Water"
+        },
+        "items": [
+          { "name": "Rosa", "volume": 0.33, "price": 140 },
+          { "name": "Rosa Gazirana", "volume": 0.33, "price": 140 },
+          { "name": "Romerquelle Limunska trava", "price": 180 },
+          { "name": "Romerquelle Kajsija Zova", "price": 180 },
+          { "name": "Gazirana voda", "volume": 1, "price": 250 },
+          { "name": "Negazirana voda", "volume": 1, "price": 250 },
+          { "name": "Voda", "volume": 0.2, "price": 10 }
+        ]
+      },
+      "carbonated_drinks": {
+        "title": {
+          "sr": "Gazirani Sokovi",
+          "en": "Carbonared Drinks"
+        },
+        "items": [
+          { "name": "Coca Cola", "volume": 0.25, "price": 200 },
+          { "name": "Coca Cola Zero", "volume": 0.25, "price": 200 },
+          { "name": "Fanta", "volume": 0.25, "price": 200 },
+          { "name": "Sprite", "volume": 0.25, "price": 200 },
+          { "name": "Schweppes Bitter Lemon", "volume": 0.25, "price": 230 },
+          { "name": "Schweppes Tonic Water", "volume": 0.25, "price": 230 },
+          { "name": "Schweppes Tangerine", "volume": 0.25, "price": 230 },
+          { "name": "Schweppes Purple Tonic", "volume": 0.25, "price": 230 },
+          { "name": "Three Cents Tonic", "volume": 0.2, "price": 300 },
+          { "name": "Cockta", "volume": 0.275, "price": 190 },
+          { "name": "Cockta Free", "volume": 0.275, "price": 190 },
+          { "name": "Orangina", "volume": 0.25, "price": 230 }
+        ]
+      },
+      "soft_drinks": {
+        "title": {
+          "sr": "Negazirani Sokovi",
+          "en": "Soft Drinks"
+        },
+        "items": [
+          { "name": "Borovnica", "volume": 0.2, "price": 230 },
+          { "name": "Jagoda", "volume": 0.2, "price": 230 },
+          { "name": "Breskva", "volume": 0.2, "price": 230 },
+          { "name": "Jabuka", "volume": 0.2, "price": 230 },
+          { "name": "Pomorandža", "volume": 0.2, "price": 230 },
+          { "name": "Ice Tea", "volume": 0.25, "price": 180 },
+          { "name": "Cedevita", "volume": 0.25, "price": 190 }
+        ]
+      },
+      "energy_drinks": {
+        "title": {
+          "sr": "Energetska pića",
+          "en": "Energy Drinks"
+        },
+        "items": [
+          { "name": "Red Bull", "volume": 0.25, "price": 340 },
+          { "name": "Ultra Energy", "volume": 0.25, "price": 240 },
+          { "name": "Hell", "volume": 0.25, "price": 240 }
+        ]
+      },
+      "beer": {
+        "title": {
+          "sr": "Pivo",
+          "en": "Beer"
+        },
+        "items": [
+          { "name": "Jelen", "volume": 0.33, "price": 240 },
+          { "name": "Bavaria", "volume": 0.25, "price": 290 },
+          { "name": "Staropramen", "volume": 0.33, "price": 290 },
+          { "name": "Nikšićko Svetlo", "volume": 0.33, "price": 290 },
+          { "name": "Nikšićko Tamno", "volume": 0.33, "price": 290 },
+          { "name": "Stella Artois", "volume": 0.33, "price": 350 },
+          { "name": "Corona Extra", "volume": 0.33, "price": 490 },
+          { "name": "Hoegaarden", "volume": 0.33, "price": 390 }
+        ]
+      },
+      "vodka": {
+        "title": {
+          "sr": "Votka",
+          "en": "Vodka"
+        },
+        "items": [
+          { "name": "Smirnoff", "volume": 0.03, "price": 220 },
+          { "name": "Grey Goose", "volume": 0.7, "price": 990 },
+          { "name": "Atlatic", "volume": 0.05, "price": 180 },
+          { "name": "Smirnoff Ice", "volume": 0.025, "price": 450 }
+        ]
+      },
+      "combo_deals": {
+        "title": {
+          "sr": "Combo ponude",
+          "en": "Combo Deals"
+        },
+        "items": [
+          { "name": "Playma Shake + Rosa", "price": 400 },
+          { "name": "Romerquelle + Espresso", "price": 280 },
+          { "name": "Coca Cola + Espresso", "price": 310 },
+          { "name": "Rosa + Espresso", "price": 250 },
+          { "name": "Cedevita + Espresso", "price": 290 },
+          { "name": "Cocta + Espresso", "price": 290 },
+          { "name": "Coca Cola + Jack Daniel's", "price": 450 }
+        ]
+      }
+    }
+  }
+}
