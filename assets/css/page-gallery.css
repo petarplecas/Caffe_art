@@ -1,0 +1,29 @@
+/*---------------------------------------------*/
+/* GALLERY PAGE SPECIFIC STYLES */
+/*---------------------------------------------*/
+
+/* Remove header banner for Gallery page - navigation only */
+header {
+    height: auto;
+    min-height: 0;
+    background: transparent;
+    padding-top: 0;
+}
+
+header::before,
+header::after {
+    display: none;
+}
+
+.header-text-box {
+    display: none;
+}
+
+nav {
+    position: relative;
+    background-color: rgba(var(--dark-primary-rgb), var(--opacity-overlay-medium));
+}
+
+nav.sticky {
+    background-color: rgba(var(--dark-primary-rgb), var(--opacity-overlay-medium));
+}

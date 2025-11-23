@@ -1,0 +1,25 @@
+/*---------------------------------------------*/
+/* BAR PAGE SPECIFIC STYLES */
+/*---------------------------------------------*/
+
+/* Custom header background for Bar page */
+header::before {
+    background-image: url(../img/backgrounds/bar-header-desktop.jpg) !important;
+    background-position: center 70% !important;
+}
+
+/* Responsive header height for Bar page */
+@media only screen and (max-width: 768px) {
+    header {
+        height: 75vh;
+    }
+    header::before {
+        background-image: url(../img/backgrounds/bar-header-mobile.jpg) !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        height: 70vh;
+    }
+}

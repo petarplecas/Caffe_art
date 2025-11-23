@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://artcaffe.rs/</loc>
+    <lastmod>2025-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://artcaffe.rs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://artcaffe.rs/" />
+  </url>
+
+  <!-- Bar Page -->
+  <url>
+    <loc>https://artcaffe.rs/bar</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://artcaffe.rs/bar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://artcaffe.rs/bar" />
+  </url>
+
+  <!-- Gallery Page -->
+  <url>
+    <loc>https://artcaffe.rs/gallery</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://artcaffe.rs/gallery" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://artcaffe.rs/gallery" />
+
+    <!-- Key Images -->
+    <image:image>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/Basta.jpg</image:loc>
+      <image:title>Bašta kafića Caffe Bar Art u Žitištu</image:title>
+      <image:caption>Opuštajuća bašta Caffe Bar Art sa zelenilom</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/Kafa.jpg</image:loc>
+      <image:title>Hausbrandt kafa u Caffe Bar Art</image:title>
+      <image:caption>Vrhunska Hausbrandt espresso kafa</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/Home.jpg</image:loc>
+      <image:title>Unutrašnji ambijent kafića Art Žitište</image:title>
+      <image:caption>Moderan i prijatan ambijent</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/Lavazza_kafa.jpg</image:loc>
+      <image:title>Lavazza premium kafa</image:title>
+      <image:caption>Vrhunska Lavazza kafa u kafiću Art</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/Znak_art_1.jpg</image:loc>
+      <image:title>Znak Caffe Bar Art Žitište</image:title>
+      <image:caption>Prepoznatljiv znak kafića u centru Žitišta</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://artcaffe.rs/contact</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://artcaffe.rs/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://artcaffe.rs/contact" />
+  </url>
+
+  <!-- FAQ Page -->
+  <url>
+    <loc>https://artcaffe.rs/faq</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://artcaffe.rs/faq" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://artcaffe.rs/faq" />
+  </url>
+
+</urlset>

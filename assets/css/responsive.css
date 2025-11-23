@@ -65,6 +65,23 @@
     .menu-card-list li {
         font-size: 16px;
     }
+
+    /* Drinks Menu Section */
+    .menu-title {
+        font-size: 3rem;
+    }
+
+    .drinks-menu-container {
+        column-gap: 50px;
+    }
+
+    .menu-section-title {
+        font-size: 2.2rem;
+    }
+
+    .category-title {
+        font-size: 1.6rem;
+    }
 }
 
 /* Tablets - landscape specific (769px to 1024px) */
@@ -170,15 +187,6 @@
         animation: fadeIn 0.3s ease;
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
     .main-nav li {
         display: block;
         margin: 0;
@@ -193,13 +201,6 @@
     .main-nav.open li:nth-child(3) { animation-delay: 0.3s; }
     .main-nav.open li:nth-child(4) { animation-delay: 0.4s; }
     .main-nav.open li:nth-child(5) { animation-delay: 0.5s; }
-
-    @keyframes slideUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
     .main-nav li a:link,
     .main-nav li a:visited {
@@ -300,6 +301,55 @@
 
     .hours-row .time {
         font-size: 18px;
+    }
+
+    /* Drinks Menu Section */
+    .section-menu {
+        padding: 60px 30px;
+        background-attachment: scroll;
+    }
+
+    .menu-header {
+        margin-bottom: 50px;
+    }
+
+    .menu-title {
+        font-size: 2.5rem;
+    }
+
+    .menu-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Single column layout */
+    .drinks-menu-container {
+        column-count: 1;
+        padding: 0 25px;
+    }
+
+    .menu-section-header {
+        margin: 50px 0 35px 0;
+    }
+
+    .menu-section-title {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    .menu-category {
+        margin-bottom: 45px;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .drink-name {
+        font-size: 1rem;
+    }
+
+    .drink-price {
+        font-size: 1.1rem;
     }
 }
 
@@ -440,5 +490,108 @@
 
     .mapouter {
         text-align: center;
+    }
+
+    /* Drinks Menu Section */
+    .section-menu {
+        padding: 50px 20px;
+        background-attachment: scroll;
+    }
+
+    .menu-header {
+        margin-bottom: 40px;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .menu-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .drinks-menu-container {
+        padding: 0 15px;
+    }
+
+    .menu-section-header {
+        margin: 40px 0 30px 0;
+    }
+
+    .menu-section-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+        padding-bottom: 15px;
+    }
+
+    .menu-section-title::after {
+        width: 60px;
+        height: 2px;
+    }
+
+    .menu-category {
+        margin-bottom: 35px;
+    }
+
+    .category-header {
+        gap: 10px;
+    }
+
+    .category-icon {
+        font-size: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .drinks-list {
+        gap: 15px;
+    }
+
+    .drink-item {
+        padding-bottom: 12px;
+    }
+
+    .drink-name {
+        font-size: 0.95rem;
+    }
+
+    .drink-volume {
+        font-size: 0.85rem;
+    }
+
+    .drink-price {
+        font-size: 1rem;
+        margin-left: 15px;
+    }
+}
+
+/* Small mobile (375px and below) */
+@media only screen and (max-width: 375px) {
+    /* Drinks Menu Section */
+    .menu-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-section-title {
+        font-size: 1.4rem;
+    }
+
+    .category-title {
+        font-size: 1.2rem;
+    }
+
+    .drink-name {
+        font-size: 0.9rem;
+    }
+
+    .drink-volume {
+        font-size: 0.8rem;
+    }
+
+    .drink-price {
+        font-size: 0.95rem;
     }
 }

@@ -1,0 +1,21 @@
+/*---------------------------------------------*/
+/* CONTACT PAGE SPECIFIC STYLES */
+/*---------------------------------------------*/
+
+/* Custom header background for Contact page */
+header::before {
+    background-image: url(../img/backgrounds/contact-header.jpg) !important;
+}
+
+/* Responsive header height for Contact page */
+@media only screen and (max-width: 768px) {
+    header {
+        height: 75vh;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header {
+        height: 70vh;
+    }
+}

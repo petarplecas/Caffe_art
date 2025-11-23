@@ -57,11 +57,7 @@ body.menu-open {
 /* REUSABLE COMPONENTS */
 /*---------------------------------------------*/
 
-.row{
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
-}
+/* .row is now defined in layout.css with flexbox/grid system */
 
 section{
     padding: 80px;
@@ -117,15 +113,7 @@ h3{
 
 }
 
-h2:after{
-    display:block;
-    height: 2px;
-    background-color: var(--gold-primary);
-    content: " ";
-    width: 100px;
-    margin: 0 auto;
-    margin-top: 15px;
-}
+/* Decorative line now uses utility class .decorative-line - see variables.css */
 
 /* PARAGRAPHS */
 
@@ -140,29 +128,4 @@ h2:after{
     line-height: 145%;
 }
 
-/*---------------------------------------------*/
-/* ANIMATIONS */
-/*---------------------------------------------*/
-
-.js--wp-1,
-.js--wp-2,
-.js--wp-3,
-.js--wp-4{
-    opacity: 0;
-    animation-duration: 1s;
-}
-
-.js--wp-1.animated,
-.js--wp-2.animated,
-.js--wp-3.animated,
-.js--wp-4.animated{
-    opacity: 1;
-}
-
-.js--wp-2{
-    animation-duration: 1.5s;
-}
-
-.js--wp-2.animated{
-    opacity: 1;
-}
+/* Animations moved to animations.css */

@@ -7,29 +7,10 @@
     position: relative;
     height: 500px;
     width: 100%;
-    /* Initial state - no background for lazy loading */
-    background-color: var(--dark-primary);
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-warm) 50%, var(--dark-primary) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-image 0.3s ease;
-}
-
-/* Lazy loaded background - only loads when visible */
-.section-contact.background-loaded {
-    /* WebP with JPG fallback */
-    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))), url(../img/backgrounds/calendar.jpg);
-    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))),
-                      -webkit-image-set(
-                        url(../img/backgrounds/calendar.webp) 1x
-                      );
-    background-image: linear-gradient(rgba(var(--dark-primary-rgb), var(--opacity-overlay-light)), rgba(var(--dark-primary-rgb), var(--opacity-overlay-light))),
-                      image-set(
-                        url(../img/backgrounds/calendar.webp) type("image/webp") 1x,
-                        url(../img/backgrounds/calendar.jpg) type("image/jpeg") 1x
-                      );
 }
 
 .contact-container {
@@ -58,13 +39,10 @@
     white-space: nowrap;
 }
 
+/* Using utility class .decorative-line with custom width */
 .contact-heading:after {
-    display: block;
-    height: 2px;
-    background-color: var(--gold-primary);
-    content: " ";
     width: 80px;
-    margin: 15px auto 20px;
+    margin-bottom: 20px;
 }
 
 /* Social media icons - horizontal */
@@ -157,4 +135,78 @@
     height: 300px;
     width: 300px;
     border: 3px solid var(--gold-primary);
+}
+
+/* FAQ Link in Footer */
+.footer-faq-link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.faq-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: rgba(var(--gold-primary-rgb), 0.1);
+    color: var(--gold-primary);
+    text-decoration: none;
+    border: 2px solid var(--gold-primary);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.faq-button:hover {
+    background: var(--gold-primary);
+    color: var(--dark-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--gold-primary-rgb), 0.3);
+}
+
+.faq-button i {
+    font-size: 1.1rem;
+}
+
+/* Clickable email and phone links */
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--gold-primary);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media only screen and (max-width: 768px) {
+    .footer-faq-link {
+        margin-top: 20px;
+    }
+
+    .faq-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .faq-button i {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .faq-button {
+        padding: 8px 14px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .faq-button i {
+        font-size: 0.9rem;
+    }
 }

@@ -7,6 +7,9 @@
       "contact": "Caffe Bar Art - Kontakt"
     }
   },
+  "loading": {
+    "text": "Učitavanje..."
+  },
   "nav": {
     "bar": "Bar",
     "gallery": "Galerija",
@@ -91,5 +94,11 @@
       "title": "Kontakt",
       "address": "Trg Oslobođenja bb"
     }
+  },
+  "cookie_consent": {
+    "title": "Kolačići i privatnost",
+    "message": "Koristimo Google Analytics kolačiće da bismo razumeli kako posetioci koriste naš sajt i poboljšali vaše iskustvo. Vaši podaci su anonimni i bezbedni.",
+    "accept": "Prihvatam",
+    "decline": "Odbijam"
   }
 }

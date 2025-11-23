@@ -11,11 +11,15 @@
 
     // Initialize i18n system
     async function initI18n() {
+        console.log('Initializing i18n system...');
+
         // Check localStorage for saved language preference
         const savedLang = localStorage.getItem('caffeArtLang');
         if (savedLang && (savedLang === 'sr' || savedLang === 'en')) {
             currentLang = savedLang;
         }
+
+        console.log('Current language:', currentLang);
 
         // Set HTML lang attribute
         document.documentElement.lang = currentLang;
@@ -31,22 +35,37 @@
 
         // Update active language indicator
         updateActiveLanguage();
+
+        console.log('i18n initialized successfully');
     }
 
     // Load translation files
     async function loadTranslations() {
         try {
-            const response = await fetch(`assets/lang/${currentLang}.json`);
+            // Determine path prefix for assets
+            const pathPrefix = typeof CaffeArtUtils !== 'undefined' && CaffeArtUtils.getPathPrefix
+                ? CaffeArtUtils.getPathPrefix()
+                : '';
+
+            const translationPath = `${pathPrefix}assets/lang/${currentLang}.json`;
+            console.log('Loading translations from:', translationPath);
+
+            const response = await fetch(translationPath);
             if (!response.ok) {
-                throw new Error(`Failed to load ${currentLang}.json`);
+                throw new Error(`Failed to load ${currentLang}.json - Status: ${response.status}`);
             }
             translations = await response.json();
+            console.log('Translations loaded successfully');
         } catch (error) {
             console.error('Error loading translations:', error);
             // Fallback to Serbian if translation load fails
             if (currentLang !== 'sr') {
                 currentLang = 'sr';
-                const response = await fetch('assets/lang/sr.json');
+                console.log('Falling back to Serbian language');
+                const pathPrefix = typeof CaffeArtUtils !== 'undefined' && CaffeArtUtils.getPathPrefix
+                    ? CaffeArtUtils.getPathPrefix()
+                    : '';
+                const response = await fetch(`${pathPrefix}assets/lang/sr.json`);
                 translations = await response.json();
             }
         }
@@ -113,11 +132,11 @@
         const path = window.location.pathname;
         let titleKey = 'meta.title.home';
 
-        if (path.includes('bar.html')) {
+        if (path.includes('/bar') || path.includes('bar.html')) {
             titleKey = 'meta.title.bar';
-        } else if (path.includes('gallery.html')) {
+        } else if (path.includes('/gallery') || path.includes('gallery.html')) {
             titleKey = 'meta.title.gallery';
-        } else if (path.includes('contact.html')) {
+        } else if (path.includes('/contact') || path.includes('contact.html')) {
             titleKey = 'meta.title.contact';
         }
 
@@ -129,6 +148,11 @@
 
     // Translate dynamic lists (menu items, etc.)
     function translateDynamicLists() {
+        // Only run on bar page (performance optimization)
+        if (!CaffeArtUtils.isCurrentPage('/bar')) {
+            return;
+        }
+
         // Bar menu items
         const menuCards = document.querySelectorAll('.menu-card');
         menuCards.forEach(function(card, index) {
@@ -160,24 +184,45 @@
     function setupLanguageSwitcher() {
         const langButtons = document.querySelectorAll('.lang-switcher button, .mobile-lang-switcher button, .lang-switcher a, .mobile-lang-switcher a');
 
-        langButtons.forEach(function(button) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const newLang = this.getAttribute('data-lang');
+        console.log('Setting up language switcher. Found', langButtons.length, 'buttons');
 
-                if (newLang && newLang !== currentLang) {
-                    switchLanguage(newLang);
-                }
-            });
+        if (langButtons.length === 0) {
+            console.warn('No language switcher buttons found');
+            return;
+        }
+
+        langButtons.forEach(function(button) {
+            const lang = button.getAttribute('data-lang');
+            console.log('Adding click listener to button for language:', lang);
+            // Remove existing listeners to prevent duplicates
+            button.removeEventListener('click', handleLanguageSwitch);
+            button.addEventListener('click', handleLanguageSwitch);
         });
+
+        console.log('Language switcher setup complete');
+    }
+
+    // Language switch handler
+    function handleLanguageSwitch(e) {
+        e.preventDefault();
+        const newLang = this.getAttribute('data-lang');
+
+        if (newLang && newLang !== currentLang) {
+            switchLanguage(newLang);
+        }
     }
 
     // Switch to a new language
     async function switchLanguage(newLang) {
+        console.log('Switching language to:', newLang);
+
         if (newLang !== 'sr' && newLang !== 'en') {
             console.error('Invalid language:', newLang);
             return;
         }
+
+        // Store previous language for analytics
+        const previousLang = currentLang;
 
         // Update current language
         currentLang = newLang;
@@ -197,6 +242,13 @@
         // Update active language indicator
         updateActiveLanguage();
 
+        console.log('Language switched successfully to:', newLang);
+
+        // Track language change in GA4
+        if (typeof CaffeArtAnalytics !== 'undefined' && CaffeArtAnalytics.trackLanguageChange) {
+            CaffeArtAnalytics.trackLanguageChange(previousLang, newLang);
+        }
+
         // Re-initialize Twemoji for flag emojis after language change
         if (typeof twemoji !== 'undefined') {
             setTimeout(function() {
@@ -213,38 +265,8 @@
             CaffeArtMenu.updateLanguage();
         }
 
-        // Close mobile menu if open
-        closeMobileMenu();
-    }
-
-    // Close mobile menu helper function
-    function closeMobileMenu() {
-        const mainNav = document.querySelector('.main-nav');
-        const menuIcon = document.querySelector('.mobile-menu-icon');
-        const body = document.body;
-
-        if (mainNav && mainNav.classList.contains('open')) {
-            mainNav.classList.remove('open');
-            body.classList.remove('menu-open');
-
-            // Get current scroll position from body top before resetting
-            const currentTop = body.style.top;
-            const scrollPosition = currentTop ? Math.abs(parseInt(currentTop)) : 0;
-
-            body.style.top = '';
-
-            // Restore scroll position
-            requestAnimationFrame(function() {
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'instant'
-                });
-            });
-
-            if (menuIcon) {
-                menuIcon.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        }
+        // Close mobile menu if open (using shared utility)
+        CaffeArtUtils.closeMobileMenu();
     }
 
     // Update active language indicator

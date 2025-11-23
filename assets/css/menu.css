@@ -2,20 +2,33 @@
 /* DRINKS MENU SECTION - MODERN DESIGN */
 /*---------------------------------------------*/
 
-/* Color variables */
-:root {
-    --menu-bg: #0f3d3e;
-    --menu-accent: #ffb88c;
-    --menu-text: #ffffff;
-    --menu-secondary: #a8b2b8;
-    --menu-border: rgba(255, 184, 140, 0.2);
-}
+/* Using global color variables from variables.css */
 
 /* Section container */
 .section-menu {
-    background-color: var(--menu-bg);
-    padding: 80px 0;
+    background-image: url('../img/backgrounds/coffee-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 80px 40px;
     min-height: 100vh;
+    position: relative;
+}
+
+/* Dark overlay to make text stand out */
+.section-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        rgba(15, 61, 62, 0.85) 0%,
+        rgba(12, 48, 50, 0.88) 50%,
+        rgba(20, 70, 72, 0.82) 100%);
+    z-index: 0;
 }
 
 /* Menu header */
@@ -23,13 +36,15 @@
     text-align: center;
     margin-bottom: 60px;
     animation: fadeInDown 0.8s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .menu-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--menu-accent);
+    color: var(--menu-accent-peach);
     margin-bottom: 15px;
     letter-spacing: 1px;
 }
@@ -37,7 +52,7 @@
 .menu-subtitle {
     font-family: 'Lora', serif;
     font-size: 1.2rem;
-    color: var(--menu-secondary);
+    color: var(--menu-text-muted);
     font-style: italic;
 }
 
@@ -48,6 +63,8 @@
     padding: 0 20px;
     column-count: 2;
     column-gap: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Section headers for major menu divisions */
@@ -70,7 +87,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--menu-accent);
+    color: var(--menu-accent-peach);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
@@ -87,7 +104,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--menu-accent);
+    background: var(--menu-accent-peach);
 }
 
 /* Category section */
@@ -120,14 +137,14 @@
 
 .category-icon {
     font-size: 1.8rem;
-    color: var(--menu-accent);
+    color: var(--menu-accent-peach);
 }
 
 .category-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--menu-accent);
+    color: var(--menu-accent-peach);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin: 0;
@@ -135,7 +152,7 @@
 
 .category-divider {
     height: 2px;
-    background: linear-gradient(to right, var(--menu-accent), transparent);
+    background: linear-gradient(to right, var(--menu-accent-peach), transparent);
     margin-bottom: 25px;
 }
 
@@ -152,7 +169,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 15px;
-    border-bottom: 1px solid var(--menu-border);
+    border-bottom: 1px solid rgba(var(--menu-accent-peach-rgb), 0.2);
     transition: all 0.3s ease;
 }
 
@@ -163,7 +180,7 @@
 
 .drink-item:hover {
     transform: translateX(5px);
-    border-bottom-color: var(--menu-accent);
+    border-bottom-color: var(--menu-accent-peach);
 }
 
 /* Drink info (left side) */
@@ -177,14 +194,14 @@
     font-family: 'Lora', serif;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--menu-text);
+    color: var(--white);
     line-height: 1.4;
 }
 
 .drink-volume {
     font-family: 'Lora', serif;
     font-size: 0.9rem;
-    color: var(--menu-secondary);
+    color: var(--menu-text-muted);
     font-style: italic;
 }
 
@@ -193,207 +210,10 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--menu-accent);
+    color: var(--menu-accent-peach);
     white-space: nowrap;
     margin-left: 20px;
     flex-shrink: 0;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/*---------------------------------------------*/
-/* RESPONSIVE DESIGN */
-/*---------------------------------------------*/
-
-/* Tablets (1024px and below) */
-@media only screen and (max-width: 1024px) {
-    .menu-title {
-        font-size: 3rem;
-    }
-
-    .drinks-menu-container {
-        column-gap: 50px;
-    }
-
-    .menu-section-title {
-        font-size: 2.2rem;
-    }
-
-    .category-title {
-        font-size: 1.6rem;
-    }
-}
-
-/* Tablets portrait (768px and below) */
-@media only screen and (max-width: 768px) {
-    .section-menu {
-        padding: 60px 0;
-    }
-
-    .menu-header {
-        margin-bottom: 50px;
-    }
-
-    .menu-title {
-        font-size: 2.5rem;
-    }
-
-    .menu-subtitle {
-        font-size: 1rem;
-    }
-
-    /* Single column layout */
-    .drinks-menu-container {
-        column-count: 1;
-        padding: 0 25px;
-    }
-
-    .menu-section-header {
-        margin: 50px 0 35px 0;
-    }
-
-    .menu-section-title {
-        font-size: 2rem;
-        letter-spacing: 1.5px;
-    }
-
-    .menu-category {
-        margin-bottom: 45px;
-    }
-
-    .category-title {
-        font-size: 1.5rem;
-    }
-
-    .drink-name {
-        font-size: 1rem;
-    }
-
-    .drink-price {
-        font-size: 1.1rem;
-    }
-}
-
-/* Mobile (480px and below) */
-@media only screen and (max-width: 480px) {
-    .section-menu {
-        padding: 50px 0;
-    }
-
-    .menu-header {
-        margin-bottom: 40px;
-    }
-
-    .menu-title {
-        font-size: 2rem;
-    }
-
-    .menu-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .drinks-menu-container {
-        padding: 0 15px;
-    }
-
-    .menu-section-header {
-        margin: 40px 0 30px 0;
-    }
-
-    .menu-section-title {
-        font-size: 1.6rem;
-        letter-spacing: 1px;
-        padding-bottom: 15px;
-    }
-
-    .menu-section-title::after {
-        width: 60px;
-        height: 2px;
-    }
-
-    .menu-category {
-        margin-bottom: 35px;
-    }
-
-    .category-header {
-        gap: 10px;
-    }
-
-    .category-icon {
-        font-size: 1.5rem;
-    }
-
-    .category-title {
-        font-size: 1.3rem;
-        letter-spacing: 1px;
-    }
-
-    .drinks-list {
-        gap: 15px;
-    }
-
-    .drink-item {
-        padding-bottom: 12px;
-    }
-
-    .drink-name {
-        font-size: 0.95rem;
-    }
-
-    .drink-volume {
-        font-size: 0.85rem;
-    }
-
-    .drink-price {
-        font-size: 1rem;
-        margin-left: 15px;
-    }
-}
-
-/* Small mobile (375px and below) */
-@media only screen and (max-width: 375px) {
-    .menu-title {
-        font-size: 1.8rem;
-    }
-
-    .menu-section-title {
-        font-size: 1.4rem;
-    }
-
-    .category-title {
-        font-size: 1.2rem;
-    }
-
-    .drink-name {
-        font-size: 0.9rem;
-    }
-
-    .drink-volume {
-        font-size: 0.8rem;
-    }
-
-    .drink-price {
-        font-size: 0.95rem;
-    }
-}
+/* Responsive styles moved to responsive.css */

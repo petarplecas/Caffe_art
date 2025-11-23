@@ -1,8 +1,10 @@
 /*---------------------------------------------*/
-/* CUSTOM ANIMATIONS */
+/* CUSTOM ANIMATIONS - CENTRALIZED */
 /*---------------------------------------------*/
 
 /* Keyframe Definitions */
+
+/* Fade animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -23,6 +25,18 @@
     }
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide animations */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -42,6 +56,35 @@
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation animations */
+@keyframes navItemDropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ken Burns zoom effect for backgrounds */
+@keyframes kenBurnsZoomOut {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 

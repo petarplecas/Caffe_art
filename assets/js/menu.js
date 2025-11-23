@@ -51,7 +51,10 @@
     // Load menu data from JSON
     async function loadMenuData() {
         try {
-            const response = await fetch('assets/data/menu.json');
+            // Get path prefix using shared utility
+            const pathPrefix = CaffeArtUtils.getPathPrefix();
+
+            const response = await fetch(pathPrefix + 'assets/data/menu.json');
             if (!response.ok) {
                 throw new Error('Failed to load menu.json');
             }

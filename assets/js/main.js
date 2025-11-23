@@ -1,19 +1,6 @@
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
 
-    /* Throttle function for performance optimization */
-    function throttle(func, delay) {
-        let lastCall = 0;
-        return function(...args) {
-            const now = new Date().getTime();
-            if (now - lastCall < delay) {
-                return;
-            }
-            lastCall = now;
-            return func(...args);
-        };
-    }
-
     /* Load Header and Footer Templates */
     function loadTemplate(selector, templatePath, callback) {
         fetch(templatePath)
@@ -47,27 +34,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Get path prefix using shared utility
+    const pathPrefix = CaffeArtUtils.getPathPrefix();
+
+    // Track which templates are loaded
+    let templatesLoaded = {
+        header: false,
+        footer: false,
+        cookieConsent: false
+    };
+
+    // Initialize i18n once all templates are loaded
+    function checkAllTemplatesLoaded() {
+        if (templatesLoaded.header && templatesLoaded.footer && templatesLoaded.cookieConsent) {
+            // All templates loaded, initialize i18n once
+            if (typeof CaffeArtI18n !== 'undefined' && CaffeArtI18n.init) {
+                CaffeArtI18n.init();
+            }
+            // Initialize Twemoji for flag emojis
+            setTimeout(initTwemoji, 100);
+        }
+    }
+
     // Load header navigation
-    loadTemplate('#header-nav', 'components/header.html', function() {
+    loadTemplate('#header-nav', pathPrefix + 'components/header.html', function() {
+        // Set navigation links dynamically
+        const logoLink = document.querySelector('.logo-link');
+        const navBar = document.querySelector('.nav-bar');
+        const navGallery = document.querySelector('.nav-gallery');
+        const navContact = document.querySelector('.nav-contact');
+
+        if (logoLink) logoLink.href = pathPrefix + 'index.html';
+        if (navBar) navBar.href = pathPrefix + 'bar';
+        if (navGallery) navGallery.href = pathPrefix + 'gallery';
+        if (navContact) navContact.href = pathPrefix + 'contact';
+
+        // Update logo image paths
+        const logoImg = document.querySelector('.logo');
+        if (logoImg) logoImg.src = pathPrefix + 'assets/img/logo/logo.png';
+
         initMobileMenu();
         setActiveNavLink();
-        // Initialize i18n after header is loaded (for language switcher)
-        if (typeof CaffeArtI18n !== 'undefined' && CaffeArtI18n.init) {
-            CaffeArtI18n.init();
-        }
-        // Initialize Twemoji for flag emojis
-        setTimeout(initTwemoji, 100);
+
+        templatesLoaded.header = true;
+        checkAllTemplatesLoaded();
     });
 
     // Load footer
-    loadTemplate('#footer-container', 'components/footer.html', function() {
-        // Re-apply translations to footer after it's loaded
-        if (typeof CaffeArtI18n !== 'undefined' && CaffeArtI18n.init) {
-            // Give it a small delay to ensure footer DOM is ready
-            setTimeout(function() {
-                CaffeArtI18n.init();
-            }, 100);
+    loadTemplate('#footer-container', pathPrefix + 'components/footer.html', function() {
+        // Set FAQ link path
+        const faqButton = document.querySelector('.faq-button');
+        if (faqButton) {
+            faqButton.href = pathPrefix + 'faq';
         }
+
+        templatesLoaded.footer = true;
+        checkAllTemplatesLoaded();
+    });
+
+    // Load cookie consent banner
+    loadTemplate('#cookie-consent-container', pathPrefix + 'components/cookie-consent.html', function() {
+        // Initialize cookie consent after banner is loaded
+        if (typeof CaffeArtCookieConsent !== 'undefined' && CaffeArtCookieConsent.init) {
+            CaffeArtCookieConsent.init();
+        }
+
+        templatesLoaded.cookieConsent = true;
+        checkAllTemplatesLoaded();
     });
 
     /* Mobile Navigation */
@@ -128,23 +161,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* Set active navigation link based on current page */
     function setActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.main-nav li a');
+        const currentPath = window.location.pathname;
+        const navBar = document.querySelector('.nav-bar');
+        const navGallery = document.querySelector('.nav-gallery');
+        const navContact = document.querySelector('.nav-contact');
 
-        navLinks.forEach(function(link) {
-            const linkPage = link.getAttribute('href');
-
-            // Check if the link matches the current page
-            if (linkPage === currentPage) {
-                link.classList.add('active');
-            }
-            // Special case: if on index.html and no match found yet, don't mark anything
-            // (index.html doesn't appear in navigation)
+        // Remove all active states first
+        const allNavLinks = document.querySelectorAll('.main-nav li a');
+        allNavLinks.forEach(function(link) {
+            link.classList.remove('active');
         });
+
+        // Set active based on current path
+        if (currentPath.includes('/bar')) {
+            if (navBar) navBar.classList.add('active');
+        } else if (currentPath.includes('/gallery')) {
+            if (navGallery) navGallery.classList.add('active');
+        } else if (currentPath.includes('/contact')) {
+            if (navContact) navContact.classList.add('active');
+        }
+        // Home page (index.html) doesn't have a nav link, so no active state
     }
 
     /* Sticky Navigation with throttled scroll event */
-    const handleStickyNav = throttle(function() {
+    const handleStickyNav = CaffeArtUtils.throttle(function() {
         const nav = document.querySelector('nav');
         if (nav) {
             if (window.scrollY > 100) {
@@ -430,4 +470,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize sliders
     initImageSliders();
+
+    /* ============================================
+       ANALYTICS EVENT TRACKING SETUP
+       ============================================ */
+    function setupAnalyticsTracking() {
+        // Track navigation clicks (header menu)
+        document.addEventListener('click', function(e) {
+            const navLink = e.target.closest('.main-nav a:not(.lang-switcher button):not(.mobile-lang-switcher button)');
+            if (navLink && typeof CaffeArtAnalytics !== 'undefined' && CaffeArtAnalytics.trackNavigation) {
+                const linkText = navLink.textContent.trim();
+                const destination = navLink.getAttribute('href');
+                const isMobile = document.querySelector('.main-nav').classList.contains('open');
+                const location = isMobile ? 'Mobile Menu' : 'Header';
+
+                CaffeArtAnalytics.trackNavigation(linkText, destination, location);
+            }
+        });
+
+        // Track CTA button clicks on homepage
+        const ctaButtons = document.querySelectorAll('.cta-box .link-naslov');
+        ctaButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                if (typeof CaffeArtAnalytics !== 'undefined' && CaffeArtAnalytics.trackCTAClick) {
+                    const buttonText = this.textContent.trim();
+                    const destination = this.getAttribute('href');
+
+                    CaffeArtAnalytics.trackCTAClick(buttonText, destination, 'Homepage');
+                }
+            });
+        });
+    }
+
+    // Initialize analytics tracking after a short delay to ensure all elements are loaded
+    setTimeout(setupAnalyticsTracking, 500);
 });

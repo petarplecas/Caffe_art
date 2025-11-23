@@ -1,0 +1,48 @@
+# Caffe Bar Art - robots.txt
+# https://artcaffe.rs/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow private directories
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /components/
+Disallow: /assets/data/
+Disallow: /assets/lang/
+
+# Allow images and fonts
+Allow: /assets/img/
+Allow: /assets/fonts/
+
+# Sitemap
+Sitemap: https://artcaffe.rs/sitemap.xml
+
+# Crawl delay for polite bots
+Crawl-delay: 5
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 10
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10
