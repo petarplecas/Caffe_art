@@ -8,11 +8,18 @@
     /**
      * Determines the path prefix based on current location
      * Used for loading assets and templates from subfolders
-     * @returns {string} Path prefix (empty since we use <base> tag)
+     * @returns {string} Path prefix ('../' for subfolders, '' for root)
      */
     function getPathPrefix() {
-        // With <base href="/Caffe_art/"> tag, all paths are relative to root
-        return '';
+        const pathDepth = window.location.pathname.split('/').filter(p => p && p.indexOf('.') === -1).length;
+        const pathname = window.location.pathname;
+        const isInSubfolder = pathDepth > 1 ||
+            pathname.includes('/bar') ||
+            pathname.includes('/gallery') ||
+            pathname.includes('/contact') ||
+            pathname.includes('/faq');
+
+        return isInSubfolder ? '../' : '';
     }
 
     /**
