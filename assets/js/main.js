@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get path prefix using shared utility
     const pathPrefix = CaffeArtUtils.getPathPrefix();
 
+    // Detect GitHub Pages for absolute navigation URLs
+    const isGitHubPages = window.location.hostname === 'petarplecas.github.io';
+    const baseUrl = isGitHubPages ? '/Caffe_art/' : '/';
+
     // Track which templates are loaded
     let templatesLoaded = {
         header: false,
@@ -64,14 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
         const navGallery = document.querySelector('.nav-gallery');
         const navContact = document.querySelector('.nav-contact');
 
-        if (logoLink) logoLink.href = pathPrefix + 'index.html';
-        if (navBar) navBar.href = pathPrefix + 'bar';
-        if (navGallery) navGallery.href = pathPrefix + 'gallery';
-        if (navContact) navContact.href = pathPrefix + 'contact';
+        if (logoLink) logoLink.href = baseUrl;
+        if (navBar) navBar.href = baseUrl + 'bar/';
+        if (navGallery) navGallery.href = baseUrl + 'gallery/';
+        if (navContact) navContact.href = baseUrl + 'contact/';
 
         // Update logo image paths
         const logoImg = document.querySelector('.logo');
-        if (logoImg) logoImg.src = pathPrefix + 'assets/img/logo/logo.png';
+        if (logoImg) {
+            if (isGitHubPages) {
+                logoImg.src = '/Caffe_art/assets/img/logo/logo.png';
+            } else {
+                const isSubfolder = window.location.pathname.includes('/bar') ||
+                                  window.location.pathname.includes('/gallery') ||
+                                  window.location.pathname.includes('/contact') ||
+                                  window.location.pathname.includes('/faq');
+                logoImg.src = isSubfolder ? '../assets/img/logo/logo.png' : 'assets/img/logo/logo.png';
+            }
+        }
 
         initMobileMenu();
         setActiveNavLink();
@@ -85,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set FAQ link path
         const faqButton = document.querySelector('.faq-button');
         if (faqButton) {
-            faqButton.href = pathPrefix + 'faq';
+            faqButton.href = baseUrl + 'faq/';
         }
 
         templatesLoaded.footer = true;

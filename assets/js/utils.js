@@ -7,19 +7,23 @@
 
     /**
      * Determines the path prefix based on current location
-     * Used for loading assets and templates from subfolders
-     * @returns {string} Path prefix ('../' for subfolders, '' for root)
+     * Uses explicit domain detection for GitHub Pages deployment
+     * @returns {string} Path prefix for loading components and assets
      */
     function getPathPrefix() {
-        const pathDepth = window.location.pathname.split('/').filter(p => p && p.indexOf('.') === -1).length;
-        const pathname = window.location.pathname;
-        const isInSubfolder = pathDepth > 1 ||
-            pathname.includes('/bar') ||
-            pathname.includes('/gallery') ||
-            pathname.includes('/contact') ||
-            pathname.includes('/faq');
+        // Check if we're on GitHub Pages
+        if (window.location.hostname === 'petarplecas.github.io') {
+            return '/Caffe_art/';
+        }
 
-        return isInSubfolder ? '../' : '';
+        // Local development - use relative paths
+        const path = window.location.pathname;
+        const isSubfolder = path.includes('/bar') ||
+                           path.includes('/gallery') ||
+                           path.includes('/contact') ||
+                           path.includes('/faq');
+
+        return isSubfolder ? '../' : '';
     }
 
     /**
