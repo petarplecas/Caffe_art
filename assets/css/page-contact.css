@@ -4,7 +4,7 @@
 
 /* Custom header background for Contact page */
 header::before {
-    background-image: url(../img/backgrounds/contact-header.jpg) !important;
+    background-image: url(../img/backgrounds/contact-header.webp) !important;
 }
 
 /* Responsive header height for Contact page */
