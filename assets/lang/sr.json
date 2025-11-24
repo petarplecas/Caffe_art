@@ -84,6 +84,16 @@
     }
   },
   "footer": {
+    "about": {
+      "description": "Kuća dobre kafe i još bolje atmosfere u centru Žitišta. Pridružite nam se za nezaboravno iskustvo."
+    },
+    "quick_links": {
+      "title": "Brzi linkovi",
+      "bar": "Bar",
+      "gallery": "Galerija",
+      "contact": "Kontakt",
+      "faq": "Često postavljana pitanja"
+    },
     "working_hours": {
       "title": "Radno vreme",
       "weekdays": "Ponedeljak - Četvrtak",
@@ -92,8 +102,12 @@
     },
     "contact": {
       "title": "Kontakt",
-      "address": "Trg Oslobođenja bb"
-    }
+      "address": "Trg Oslobođenja bb, Žitište",
+      "view_map": "Pogledaj na mapi"
+    },
+    "copyright": "Sva prava zadržana.",
+    "made_with": "Napravljeno sa",
+    "in_zitiste": "u Žitištu"
   },
   "cookie_consent": {
     "title": "Kolačići i privatnost",
