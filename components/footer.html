@@ -1,50 +1,96 @@
-<section class="section-contact lazy-background" id="kontakt">
-    <div class="contact-container">
-            <!-- Radno vreme kolona -->
-            <div class="contact-column">
-                <h2 class="contact-heading" data-i18n="footer.working_hours.title">Radno vreme</h2>
-                <div class="working-hours">
-                    <div class="hours-row">
-                        <span class="days" data-i18n="footer.working_hours.weekdays">Ponedeljak - Četvrtak</span>
-                        <span class="time">08:00 - 00:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="days" data-i18n="footer.working_hours.weekend">Petak - Subota</span>
-                        <span class="time">08:00 - 02:00</span>
-                    </div>
-                    <div class="hours-row">
-                        <span class="days" data-i18n="footer.working_hours.sunday">Nedelja</span>
-                        <span class="time">09:00 - 00:00</span>
-                    </div>
-                </div>
-            </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+        <div class="footer-container">
 
-            <!-- Kontakt kolona -->
-            <div class="contact-column">
-                <h2 class="contact-heading" data-i18n="footer.contact.title">Kontakt</h2>
-                <div class="contact-social">
-                    <a href="https://www.facebook.com/artzitiste/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/art_zitiste/?hl=sr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <!-- About Column -->
+            <div class="footer-column footer-about">
+                <div class="footer-logo">
+                    <img src="assets/img/logo/logo.png" alt="Caffe Bar Art Logo">
+                    <h3>Caffe Bar Art</h3>
                 </div>
-                <div class="contact-info">
-                    <span><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer.contact.address">Trg Oslobođenja bb</span></span>
-                    <span><i class="far fa-envelope"></i> <a href="mailto:caffeart@gmail.com">caffeart@gmail.com</a></span>
-                    <span><i class="fas fa-phone-square"></i> <a href="tel:+381612003932">0612003932</a></span>
-                </div>
-                <div class="footer-faq-link">
-                    <a href="faq" class="faq-button">
-                        <i class="fas fa-question-circle"></i> Često postavljena pitanja
+                <p class="footer-description" data-i18n="footer.about.description">
+                    Kuća dobre kafe i još bolje atmosfere u centru Žitišta. Pridružite nam se za nezaboravno iskustvo.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/artzitiste/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/art_zitiste/?hl=sr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Mapa kolona -->
-            <div class="contact-column">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe width="300" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=caffe%20art%20zitiste&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" loading="lazy"></iframe>
-                    </div>
-                </div>
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h4 class="footer-heading" data-i18n="footer.quick_links.title">Brzi linkovi</h4>
+                <ul class="footer-links">
+                    <li><a href="bar" data-i18n="footer.quick_links.bar">Bar</a></li>
+                    <li><a href="gallery" data-i18n="footer.quick_links.gallery">Galerija</a></li>
+                    <li><a href="contact" data-i18n="footer.quick_links.contact">Kontakt</a></li>
+                    <li><a href="faq" data-i18n="footer.quick_links.faq">Često postavljana pitanja</a></li>
+                </ul>
             </div>
+
+            <!-- Working Hours Column -->
+            <div class="footer-column">
+                <h4 class="footer-heading" data-i18n="footer.working_hours.title">Radno vreme</h4>
+                <ul class="footer-hours">
+                    <li>
+                        <span class="day" data-i18n="footer.working_hours.weekdays">Ponedeljak - Četvrtak</span>
+                        <span class="time">08:00 - 00:00</span>
+                    </li>
+                    <li>
+                        <span class="day" data-i18n="footer.working_hours.weekend">Petak - Subota</span>
+                        <span class="time">08:00 - 02:00</span>
+                    </li>
+                    <li>
+                        <span class="day" data-i18n="footer.working_hours.sunday">Nedelja</span>
+                        <span class="time">09:00 - 00:00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h4 class="footer-heading" data-i18n="footer.contact.title">Kontakt</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-i18n="footer.contact.address">Trg Oslobođenja bb, Žitište</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+381612003932">061 200 3932</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:caffeart@gmail.com">caffeart@gmail.com</a>
+                    </li>
+                </ul>
+                <!-- Map Link -->
+                <a href="https://maps.google.com/maps?q=caffe%20art%20zitiste" target="_blank" rel="noopener noreferrer" class="footer-map-link">
+                    <i class="fas fa-map"></i>
+                    <span data-i18n="footer.contact.view_map">Pogledaj na mapi</span>
+                </a>
+            </div>
+
+        </div>
     </div>
-</section>
+
+    <!-- Footer Bottom / Copyright Bar -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p class="footer-copyright">
+                &copy; <span id="currentYear"></span> Caffe Bar Art. <span data-i18n="footer.copyright">Sva prava zadržana.</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Set current year dynamically -->
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>

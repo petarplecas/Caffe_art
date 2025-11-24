@@ -84,6 +84,16 @@
     }
   },
   "footer": {
+    "about": {
+      "description": "Home of great coffee and even better atmosphere in the center of Žitište. Join us for an unforgettable experience."
+    },
+    "quick_links": {
+      "title": "Quick Links",
+      "bar": "Bar",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "faq": "FAQ"
+    },
     "working_hours": {
       "title": "Working Hours",
       "weekdays": "Monday - Thursday",
@@ -92,8 +102,12 @@
     },
     "contact": {
       "title": "Contact",
-      "address": "Trg Oslobođenja bb"
-    }
+      "address": "Trg Oslobođenja bb, Žitište",
+      "view_map": "View on Map"
+    },
+    "copyright": "All rights reserved.",
+    "made_with": "Made with",
+    "in_zitiste": "in Žitište"
   },
   "cookie_consent": {
     "title": "Cookies & Privacy",

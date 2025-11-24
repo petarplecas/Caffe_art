@@ -1,5 +1,5 @@
 /*---------------------------------------------*/
-/* LOADING SCREEN */
+/* LOADING SCREEN - COFFEE CUP WITH RISING LOGO */
 /*---------------------------------------------*/
 
 /* Prevent scrolling while loading */
@@ -13,6 +13,7 @@ body.loading {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Classic dark gradient background for desktop/tablet */
     background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-warm) 50%, var(--dark-primary) 100%);
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@ body.loading {
     visibility: hidden;
 }
 
-/* Logo container in center */
+/* Logo container - positioned in center of coffee cup */
 .loading-logo-container {
     position: relative;
     display: flex;
@@ -46,7 +47,7 @@ body.loading {
     animation: pulse 2s ease-in-out infinite;
 }
 
-/* Spinner animation */
+/* Spinner animation - classic rotating rings */
 .loading-spinner {
     width: 150px;
     height: 150px;
@@ -89,7 +90,7 @@ body.loading {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -97,6 +98,7 @@ body.loading {
     }
 }
 
+/* Classic spinner spin animation */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -106,6 +108,7 @@ body.loading {
     }
 }
 
+/* Classic logo pulse animation */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -117,7 +120,7 @@ body.loading {
     }
 }
 
-/* Logo transition from center to nav position */
+/* Classic logo transition from center to nav position (Desktop/Tablet) */
 .loading-screen.transitioning .loading-logo {
     transform-origin: top left;
     animation: moveToNav 1s ease-in-out forwards;
@@ -148,7 +151,7 @@ body.loading {
     transition: opacity 0.3s ease;
 }
 
-/* Responsive adjustments */
+/* Tablet adjustments - still using classic loading */
 @media only screen and (max-width: 768px) {
     .loading-logo {
         width: 100px;
@@ -158,10 +161,6 @@ body.loading {
     .loading-spinner {
         width: 130px;
         height: 130px;
-    }
-
-    .loading-screen.transitioning .loading-logo {
-        transform-origin: top left;
     }
 
     @keyframes moveToNav {
@@ -184,7 +183,16 @@ body.loading {
     }
 }
 
+/* Mobile - Coffee cup background with same animation as desktop */
 @media only screen and (max-width: 480px) {
+    /* Coffee cup background without gradient */
+    .loading-screen {
+        background-image: url('../img/backgrounds/coffee-cup-mobile.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
     .loading-logo {
         width: 80px;
         height: 80px;
@@ -193,6 +201,49 @@ body.loading {
     .loading-spinner {
         width: 110px;
         height: 110px;
+    }
+
+    /* Steam rings for mobile */
+    .spinner-ring {
+        border: 2px solid transparent;
+        animation: steamRise 3s ease-out infinite;
+        opacity: 0;
+    }
+
+    .spinner-ring:nth-child(1) {
+        border-top-color: rgba(210, 159, 84, 0.4);
+        border-right-color: rgba(210, 159, 84, 0.2);
+        animation: steamRise 3s ease-out infinite;
+    }
+
+    .spinner-ring:nth-child(2) {
+        border-top-color: rgba(255, 255, 255, 0.3);
+        border-left-color: rgba(255, 255, 255, 0.15);
+        animation: steamRise 3.5s ease-out infinite 0.8s;
+    }
+
+    .spinner-ring:nth-child(3) {
+        border-top-color: rgba(210, 159, 84, 0.35);
+        border-right-color: rgba(210, 159, 84, 0.2);
+        animation: steamRise 4s ease-out infinite 1.6s;
+    }
+
+    /* Steam rise animation for mobile */
+    @keyframes steamRise {
+        0% {
+            transform: translate(-50%, -50%) scale(0.8) rotate(0deg);
+            opacity: 0;
+        }
+        15% {
+            opacity: 0.6;
+        }
+        70% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: translate(-20%, -120%) scale(1.4) rotate(45deg);
+            opacity: 0;
+        }
     }
 
     .loading-screen.transitioning .loading-logo {

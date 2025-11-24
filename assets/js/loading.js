@@ -47,6 +47,9 @@
         const elapsedTime = Date.now() - startTime;
         const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsedTime);
 
+        // Transition duration is same for all devices
+        const transitionDuration = 1000; // 1s for all devices
+
         // Wait for minimum loading time before hiding
         setTimeout(function() {
             // Add transitioning class for logo movement animation
@@ -63,7 +66,7 @@
                 setTimeout(function() {
                     loadingScreen.style.display = 'none';
                 }, 800);
-            }, 1000); // Logo transition duration
+            }, transitionDuration);
         }, remainingTime);
     }
 
