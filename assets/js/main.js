@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Detect GitHub Pages for absolute navigation URLs
     const isGitHubPages = window.location.hostname === 'petarplecas.github.io';
-    const baseUrl = isGitHubPages ? '/Caffe_art/' : '/';
+    const baseUrl = '/';
 
     // Track which templates are loaded
     let templatesLoaded = {
