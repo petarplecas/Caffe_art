@@ -176,3 +176,15 @@
         font-size: 0.9rem;
     }
 }
+
+/* Slide down animation for hiding banner */
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}

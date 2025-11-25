@@ -154,7 +154,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: inherit;
-    animation: kenBurnsZoomOut 30s ease-in-out forwards;
+    animation: kenBurnsZoomOut 20s ease-in-out forwards;
     pointer-events: none;
 }
 
@@ -175,7 +175,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: inherit;
-    animation: kenBurnsZoomOut 30s ease-in-out forwards;
+    animation: kenBurnsZoomOut 20s ease-in-out forwards;
     pointer-events: none;
     z-index: -1;
 }
@@ -440,5 +440,11 @@
         padding: 0.8rem 2rem;
         font-size: 0.9rem;
         letter-spacing: 1.5px;
+    }
+
+    /* Specific positioning for gallery exterior image on mobile */
+    .section-split.reverse .slider-track .slider-item:nth-child(3),
+    .section-split.reverse .slider-track .slider-item:nth-child(3)::before {
+        background-position: 60% center;
     }
 }

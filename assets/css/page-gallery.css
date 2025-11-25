@@ -20,8 +20,8 @@ header::after {
 }
 
 nav {
-    position: relative;
-    background-color: rgba(var(--dark-primary-rgb), var(--opacity-overlay-medium));
+    position: fixed;
+    background-color: transparent;
 }
 
 nav.sticky {

@@ -7,22 +7,10 @@
 
     /**
      * Determines the path prefix based on current location
-     * Uses explicit domain detection for GitHub Pages deployment
+     * Uses relative paths - subfolders use '../', root uses ''
      * @returns {string} Path prefix for loading components and assets
      */
     function getPathPrefix() {
-        // Check if we're on GitHub Pages (root deployment)
-        if (window.location.hostname === 'petarplecas.github.io') {
-            // Root deployment - use absolute paths from root
-            const path = window.location.pathname;
-            const isSubfolder = path.includes('/bar') ||
-                               path.includes('/gallery') ||
-                               path.includes('/contact') ||
-                               path.includes('/faq');
-            return isSubfolder ? '../' : '';
-        }
-
-        // Local development - use relative paths
         const path = window.location.pathname;
         const isSubfolder = path.includes('/bar') ||
                            path.includes('/gallery') ||

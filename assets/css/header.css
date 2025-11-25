@@ -20,7 +20,7 @@ header::before {
     background-image: url(../img/backgrounds/homepage-header.webp);
     background-size: cover;
     background-position: center;
-    animation: kenBurnsZoomOut 30s ease-in-out forwards;
+    animation: kenBurnsZoomOut 20s ease-in-out forwards;
     z-index: 0;
 }
 

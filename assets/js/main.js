@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => {
-                console.error(error);
+                // Silent fail - component not critical
             });
     }
 
@@ -37,8 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get path prefix using shared utility
     const pathPrefix = CaffeArtUtils.getPathPrefix();
 
-    // Detect GitHub Pages for absolute navigation URLs
-    const isGitHubPages = window.location.hostname === 'petarplecas.github.io';
+    // Base URL for navigation links
     const baseUrl = '/';
 
     // Track which templates are loaded
@@ -76,15 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update logo image paths
         const logoImg = document.querySelector('.logo');
         if (logoImg) {
-            if (isGitHubPages) {
-                logoImg.src = '/Caffe_art/assets/img/logo/logo.png';
-            } else {
-                const isSubfolder = window.location.pathname.includes('/bar') ||
-                                  window.location.pathname.includes('/gallery') ||
-                                  window.location.pathname.includes('/contact') ||
-                                  window.location.pathname.includes('/faq');
-                logoImg.src = isSubfolder ? '../assets/img/logo/logo.png' : 'assets/img/logo/logo.png';
-            }
+            const isSubfolder = window.location.pathname.includes('/bar') ||
+                              window.location.pathname.includes('/gallery') ||
+                              window.location.pathname.includes('/contact') ||
+                              window.location.pathname.includes('/faq');
+            logoImg.src = isSubfolder ? '../assets/img/logo/logo.webp' : 'assets/img/logo/logo.webp';
         }
 
         initMobileMenu();
@@ -100,6 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const faqButton = document.querySelector('.faq-button');
         if (faqButton) {
             faqButton.href = baseUrl + 'faq/';
+        }
+
+        // Update footer logo image paths
+        const footerLogoImg = document.querySelector('.footer-logo img');
+        if (footerLogoImg) {
+            const isSubfolder = window.location.pathname.includes('/bar') ||
+                              window.location.pathname.includes('/gallery') ||
+                              window.location.pathname.includes('/contact') ||
+                              window.location.pathname.includes('/faq');
+            footerLogoImg.src = isSubfolder ? '../assets/img/logo/logo.webp' : 'assets/img/logo/logo.webp';
         }
 
         templatesLoaded.footer = true;

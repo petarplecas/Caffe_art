@@ -7,7 +7,9 @@
     'use strict';
 
     // Minimum loading time in milliseconds (to ensure users see the animation)
-    const MIN_LOADING_TIME = 1500;
+    // Longer for mobile to ensure pulse animation is visible
+    const isMobile = window.innerWidth <= 480;
+    const MIN_LOADING_TIME = isMobile ? 2500 : 1500;
 
     // Time when script starts executing
     const startTime = Date.now();
@@ -19,7 +21,6 @@
         const loadingScreen = document.getElementById('loadingScreen');
 
         if (!loadingScreen) {
-            console.warn('Loading screen element not found');
             return;
         }
 
@@ -34,7 +35,6 @@
         // Fallback: hide loading screen after maximum time (5 seconds)
         setTimeout(function() {
             if (!loadingScreen.classList.contains('hidden')) {
-                console.warn('Loading screen timeout - hiding forcefully');
                 hideLoadingScreen(loadingScreen);
             }
         }, 5000);

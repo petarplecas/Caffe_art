@@ -4,7 +4,8 @@
       "home": "Caffe Bar Art - Početna",
       "bar": "Caffe Bar Art - Bar",
       "gallery": "Caffe Bar Art - Galerija",
-      "contact": "Caffe Bar Art - Kontakt"
+      "contact": "Caffe Bar Art - Kontakt",
+      "faq": "Caffe Bar Art - Često Postavljena Pitanja"
     }
   },
   "loading": {
@@ -75,7 +76,7 @@
       },
       "wines": {
         "title": "Vina",
-        "text": "Vina Zvonka Bogdana zarumeniće i najbleđa lica. Ako vam je subotička vinarija van palete ukusa, uvek možete probati nešto od BlaBla vina."
+        "text": "Bajilo vina iz Subotice nude bogat izbor belih, crvenih i rosé sorti. Od svežeg Sauvignona i aromatične Tamjanike, do punog Cabernet Sauvignona - za svaki ukus imamo pravo vino."
       },
       "coffee": {
         "title": "Kafa",
@@ -114,5 +115,9 @@
     "message": "Koristimo Google Analytics kolačiće da bismo razumeli kako posetioci koriste naš sajt i poboljšali vaše iskustvo. Vaši podaci su anonimni i bezbedni.",
     "accept": "Prihvatam",
     "decline": "Odbijam"
+  },
+  "faq": {
+    "title": "Često Postavljena Pitanja",
+    "subtitle": "Ovde možete pronaći odgovore na najčešća pitanja o Caffe Bar Art Žitište"
   }
 }

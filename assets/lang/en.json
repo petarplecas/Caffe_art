@@ -4,7 +4,8 @@
       "home": "Caffe Bar Art - Home",
       "bar": "Caffe Bar Art - Bar",
       "gallery": "Caffe Bar Art - Gallery",
-      "contact": "Caffe Bar Art - Contact"
+      "contact": "Caffe Bar Art - Contact",
+      "faq": "Caffe Bar Art - Frequently Asked Questions"
     }
   },
   "loading": {
@@ -75,7 +76,7 @@
       },
       "wines": {
         "title": "Wines",
-        "text": "Zvonko Bogdan wines will bring color to even the palest faces. If the Subotica winery is outside your taste palette, you can always try something from BlaBla wines."
+        "text": "Bajilo wines from Subotica offer a rich selection of white, red and rosé varieties. From fresh Sauvignon and aromatic Tamjanika to full-bodied Cabernet Sauvignon - we have the right wine for every taste."
       },
       "coffee": {
         "title": "Coffee",
@@ -114,5 +115,9 @@
     "message": "We use Google Analytics cookies to understand how visitors use our site and improve your experience. Your data is anonymous and secure.",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Here you can find answers to the most common questions about Caffe Bar Art Žitište"
   }
 }

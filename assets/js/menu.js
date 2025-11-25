@@ -61,20 +61,17 @@
             const data = await response.json();
             menuData = data.menu;
         } catch (error) {
-            console.error('Error loading menu data:', error);
         }
     }
 
     // Render entire menu
     function renderMenu() {
         if (!menuData) {
-            console.error('Menu data not loaded');
             return;
         }
 
         const container = document.getElementById('drinks-menu');
         if (!container) {
-            console.error('Menu container not found');
             return;
         }
 
@@ -144,6 +141,11 @@
                 if (categoryData) {
                     const categoryEl = createCategoryElement(categoryKey, categoryData);
                     container.appendChild(categoryEl);
+
+                    // Track menu category view in analytics
+                    if (typeof CaffeArtAnalytics !== 'undefined' && CaffeArtAnalytics.trackMenuCategory) {
+                        CaffeArtAnalytics.trackMenuCategory(categoryKey, section.sectionKey);
+                    }
                 }
             });
         });

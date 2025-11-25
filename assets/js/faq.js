@@ -23,6 +23,13 @@
             question.addEventListener('click', function() {
                 const isActive = item.classList.contains('active');
 
+                // Track FAQ view in analytics if opening
+                if (!isActive && typeof CaffeArtAnalytics !== 'undefined' && CaffeArtAnalytics.trackFAQView) {
+                    const questionText = question.querySelector('span').textContent;
+                    const questionIndex = Array.from(faqItems).indexOf(item) + 1;
+                    CaffeArtAnalytics.trackFAQView(questionText, questionIndex);
+                }
+
                 // Close all other items (optional - remove if you want multiple items open)
                 faqItems.forEach(function(otherItem) {
                     if (otherItem !== item) {

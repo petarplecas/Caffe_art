@@ -19,13 +19,13 @@
         // Check if user has consented
         if (typeof CaffeArtCookieConsent === 'undefined' ||
             !CaffeArtCookieConsent.hasAcceptedCookies()) {
-            console.log('GA4: User has not accepted cookies. Tracking disabled.');
+            // User has not accepted cookies
             return;
         }
 
         // Check if already initialized
         if (isInitialized) {
-            console.log('GA4: Already initialized');
+            // Already initialized
             return;
         }
 
@@ -55,7 +55,7 @@
         // Set up automatic tracking
         setupAutomaticTracking();
 
-        console.log('GA4: Initialized successfully');
+        // GA4 initialized
     }
 
     /**

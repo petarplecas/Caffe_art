@@ -34,31 +34,31 @@
 
     <!-- Key Images -->
     <image:image>
-      <image:loc>https://artcaffe.rs/assets/img/gallery/Basta.jpg</image:loc>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/gallery-garden.jpg</image:loc>
       <image:title>Bašta kafića Caffe Bar Art u Žitištu</image:title>
       <image:caption>Opuštajuća bašta Caffe Bar Art sa zelenilom</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://artcaffe.rs/assets/img/gallery/Kafa.jpg</image:loc>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/gallery-hausbrandt-coffee.jpg</image:loc>
       <image:title>Hausbrandt kafa u Caffe Bar Art</image:title>
       <image:caption>Vrhunska Hausbrandt espresso kafa</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://artcaffe.rs/assets/img/gallery/Home.jpg</image:loc>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/gallery-exterior-1.jpg</image:loc>
       <image:title>Unutrašnji ambijent kafića Art Žitište</image:title>
       <image:caption>Moderan i prijatan ambijent</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://artcaffe.rs/assets/img/gallery/Lavazza_kafa.jpg</image:loc>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/gallery-lavazza-coffee.jpg</image:loc>
       <image:title>Lavazza premium kafa</image:title>
       <image:caption>Vrhunska Lavazza kafa u kafiću Art</image:caption>
     </image:image>
 
     <image:image>
-      <image:loc>https://artcaffe.rs/assets/img/gallery/Znak_art_1.jpg</image:loc>
+      <image:loc>https://artcaffe.rs/assets/img/gallery/gallery-exterior.jpg</image:loc>
       <image:title>Znak Caffe Bar Art Žitište</image:title>
       <image:caption>Prepoznatljiv znak kafića u centru Žitišta</image:caption>
     </image:image>

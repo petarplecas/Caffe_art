@@ -49,7 +49,6 @@
             }
             translations = await response.json();
         } catch (error) {
-            console.error('Error loading translations:', error);
             // Fallback to Serbian if translation load fails
             if (currentLang !== 'sr') {
                 currentLang = 'sr';
@@ -176,7 +175,6 @@
         const langButtons = document.querySelectorAll('.lang-switcher button, .mobile-lang-switcher button, .lang-switcher a, .mobile-lang-switcher a');
 
         if (langButtons.length === 0) {
-            console.warn('No language switcher buttons found');
             return;
         }
 
@@ -200,7 +198,6 @@
     // Switch to a new language
     async function switchLanguage(newLang) {
         if (newLang !== 'sr' && newLang !== 'en') {
-            console.error('Invalid language:', newLang);
             return;
         }
 

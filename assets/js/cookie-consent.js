@@ -89,7 +89,6 @@
         hideBanner();
 
         // Ensure analytics is not initialized
-        console.log('Analytics cookies declined by user');
     }
 
     /**
@@ -138,22 +137,6 @@
     function getConsentTimestamp() {
         return localStorage.getItem(CONSENT_TIMESTAMP_KEY);
     }
-
-    // CSS animation for hiding banner
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideDown {
-            from {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-        }
-    `;
-    document.head.appendChild(style);
 
     // Public API
     window.CaffeArtCookieConsent = {

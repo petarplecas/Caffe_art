@@ -77,11 +77,13 @@
     color: #ffb88c;
     margin: 1rem 0;
     font-weight: 600;
+    text-align: center;
 }
 
 .o-nama-naslov .box p {
     color: #ffffff;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* Icon container styling */

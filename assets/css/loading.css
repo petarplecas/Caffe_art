@@ -13,13 +13,15 @@ body.loading {
     left: 0;
     width: 100%;
     height: 100%;
+    /* Solid dark background to prevent content showing through */
+    background-color: var(--dark-primary);
     /* Classic dark gradient background for desktop/tablet */
-    background: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-warm) 50%, var(--dark-primary) 100%);
+    background-image: linear-gradient(135deg, var(--dark-primary) 0%, var(--dark-warm) 50%, var(--dark-primary) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 99999;
+    z-index: 999999;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
@@ -30,12 +32,15 @@ body.loading {
 
 /* Logo container - positioned in center of coffee cup */
 .loading-logo-container {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out forwards;
 }
 
 .loading-logo {
@@ -90,11 +95,11 @@ body.loading {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translate(-50%, calc(-50% + 30px));
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -121,27 +126,38 @@ body.loading {
 }
 
 /* Classic logo transition from center to nav position (Desktop/Tablet) */
-.loading-screen.transitioning .loading-logo {
-    transform-origin: top left;
-    animation: moveToNav 1s ease-in-out forwards;
+.loading-screen.transitioning .loading-logo-container {
+    animation: moveContainerToNav 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
 }
 
-@keyframes moveToNav {
+.loading-screen.transitioning .loading-logo {
+    animation: scaleAndFade 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+@keyframes moveContainerToNav {
     0% {
-        position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(1);
-        width: 120px;
-        height: 120px;
+        transform: translate(-50%, -50%);
     }
     100% {
-        position: fixed;
-        top: 15px;
-        left: 40px;
-        transform: translate(0, 0) scale(0.5);
-        width: 120px;
-        height: 120px;
+        top: 45px;
+        left: 70px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes scaleAndFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
     }
 }
 
@@ -163,22 +179,38 @@ body.loading {
         height: 130px;
     }
 
-    @keyframes moveToNav {
+    .loading-screen.transitioning .loading-logo-container {
+        animation: moveContainerToNav 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    }
+
+    .loading-screen.transitioning .loading-logo {
+        animation: scaleAndFadeTablet 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    }
+
+    @keyframes moveContainerToNav {
         0% {
-            position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            width: 100px;
-            height: 100px;
+            transform: translate(-50%, -50%);
         }
         100% {
-            position: fixed;
-            top: 10px;
-            left: 20px;
-            transform: translate(0, 0) scale(0.5);
-            width: 100px;
-            height: 100px;
+            top: 35px;
+            left: 45px;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @keyframes scaleAndFadeTablet {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        80% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(0.5);
+            opacity: 0;
         }
     }
 }
@@ -187,6 +219,8 @@ body.loading {
 @media only screen and (max-width: 480px) {
     /* Coffee cup background without gradient */
     .loading-screen {
+        /* Keep solid dark background as base */
+        background-color: var(--dark-primary);
         background-image: url('../img/backgrounds/coffee-cup-mobile.webp');
         background-size: cover;
         background-position: center center;
@@ -196,6 +230,7 @@ body.loading {
     .loading-logo {
         width: 80px;
         height: 80px;
+        animation: pulse 3.5s ease-in-out infinite;
     }
 
     .loading-spinner {
@@ -246,26 +281,38 @@ body.loading {
         }
     }
 
-    .loading-screen.transitioning .loading-logo {
-        transform-origin: top left;
+    .loading-screen.transitioning .loading-logo-container {
+        animation: moveContainerToNav 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
     }
 
-    @keyframes moveToNav {
+    .loading-screen.transitioning .loading-logo {
+        animation: scaleAndFadeMobile 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    }
+
+    @keyframes moveContainerToNav {
         0% {
-            position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            width: 80px;
-            height: 80px;
+            transform: translate(-50%, -50%);
         }
         100% {
-            position: fixed;
-            top: 8px;
-            left: 10px;
-            transform: translate(0, 0) scale(0.5625);
-            width: 80px;
-            height: 80px;
+            top: 30px;
+            left: 32px;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @keyframes scaleAndFadeMobile {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        80% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(0.5625);
+            opacity: 0;
         }
     }
 }
