@@ -157,7 +157,7 @@
         { "name": "Long Island Iced Tea", "price": 900 },
         { "name": "Blue Frog", "price": 1800 },
         { "name": "B52", "price": 200 },
-        { "name": "Monkez Brain", "price": 200 }
+        { "name": "Monkey Brain", "price": 200 }
         ]
       },
       "grickalice": {
@@ -317,7 +317,7 @@
           "en": "Combo Deals"
         },
         "items": [
-          { "name": "Playma Shake + Rosa", "price": 400 },
+          { "name": "Plazma Shake + Rosa", "price": 400 },
           { "name": "Romerquelle + Espresso", "price": 280 },
           { "name": "Coca Cola + Espresso", "price": 310 },
           { "name": "Rosa + Espresso", "price": 250 },

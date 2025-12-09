@@ -76,11 +76,11 @@
       },
       "wines": {
         "title": "Vina",
-        "text": "Bajilo vina iz Subotice nude bogat izbor belih, crvenih i rosé sorti. Od svežeg Sauvignona i aromatične Tamjanike, do punog Cabernet Sauvignona - za svaki ukus imamo pravo vino."
+        "text": "Bajilo vina iz Sremskih Karlovaca nude bogat izbor belih, crvenih i rosé sorti. Od svežeg Sauvignona i aromatične Tamjanike, do punog Cabernet Sauvignona - za svaki ukus imamo pravo vino."
       },
       "coffee": {
         "title": "Kafa",
-        "text": "Naša Housbrandt kafa, sa svojim specifičnim ukusom daće Vam dodatni nalet energije, da prebrodite bilo kakvu prepreku koja Vas je taj dan snašla."
+        "text": "Naša Lavazza gran espresso kafa, sa svojim specifičnim ukusom daće Vam dodatni nalet energije, da prebrodite bilo kakvu prepreku koja Vas je taj dan snašla."
       }
     }
   },
@@ -118,6 +118,77 @@
   },
   "faq": {
     "title": "Često Postavljena Pitanja",
-    "subtitle": "Ovde možete pronaći odgovore na najčešća pitanja o Caffe Bar Art Žitište"
+    "subtitle": "Ovde možete pronaći odgovore na najčešća pitanja o Caffe Bar Art Žitište",
+    "questions": {
+      "location": {
+        "question": "Gde se nalazi Caffe Bar Art?",
+        "answer": "Caffe Bar Art se nalazi u centru Žitišta na <strong>Trgu Oslobođenja bb</strong>. Lako nas možete pronaći u glavnom delu sela, na glavnom trgu."
+      },
+      "hours": {
+        "question": "Koje je radno vreme kafića?",
+        "answer": "Naše radno vreme:",
+        "weekdays": "Ponedeljak - Četvrtak:",
+        "weekdays_hours": "08:00 - 00:00",
+        "weekend": "Petak - Subota:",
+        "weekend_hours": "08:00 - 02:00",
+        "sunday": "Nedelja:",
+        "sunday_hours": "09:00 - 00:00"
+      },
+      "garden": {
+        "question": "Da li imate baštu?",
+        "answer": "<strong>Da!</strong> Imamo prelepu baštu okruženu zelenilom i senkom starih stabala koja predstavlja pravu oazu mira u centru Žitišta. Naša bašta je savršena za opuštanje uz jutarnju kafu ili večernje druženje."
+      },
+      "coffee": {
+        "question": "Koju kafu nudite?",
+        "answer": "Nudimo vrhunsku <strong>Lavazza gran espresso</strong> kafu koja se odlikuje specifičnim ukusom i vrhunskim kvalitetom. Naša kafa će vam pružiti pravi nalet energije."
+      },
+      "events": {
+        "question": "Da li organizujete svirke i provod?",
+        "answer": "<strong>Da!</strong> Petkom i subotom u večernjim satima se okrećemo bržim ritmovima i organizujemo provod sa muzikom uživo, omogućavajući najbolji provod u okolini Žitišta."
+      },
+      "parking": {
+        "question": "Da li imate parking?",
+        "answer": "Naš kafić raspolaže sopstvenim parking prostorom namenjenim isključivo našim gostima. Parking se nalazi odmah uz lokal, tako da možete uživati bez brige o mestu za svoj automobil."
+      },
+      "cards": {
+        "question": "Da li primamo kartice?",
+        "answer": "<strong>Da</strong>, primamo platne kartice kao i gotovinu. Prihvatamo sve standardne kreditne i debitne kartice."
+      },
+      "wifi": {
+        "question": "Da li imate WiFi?",
+        "answer": "<strong>Da</strong>, nudimo besplatan WiFi pristup svim našim gostima."
+      },
+      "contact": {
+        "question": "Kako mogu da vas kontaktiram?",
+        "answer": "Možete nas kontaktirati putem:",
+        "phone": "Telefon:",
+        "email": "E-mail:",
+        "facebook": "Facebook:",
+        "instagram": "Instagram:"
+      },
+      "distance": {
+        "question": "Koliko ste udaljeni od Zrenjanina?",
+        "answer": "Žitište se nalazi na oko <strong>15 km od Zrenjanina</strong>, što je približno 15-20 minuta vožnje automobilom. Mi smo najbliži kvalitetni kafić sa opuštajućom baštom u ovom području."
+      },
+      "menu": {
+        "question": "Šta možemo naručiti kod vas?",
+        "answer": "Imamo bogatu ponudu pića:",
+        "coffee_item": "Kafa:",
+        "coffee_desc": "Vrhunska Lavazza kafa",
+        "beers_item": "Piva:",
+        "beers_desc": "Širok izbor iz Jelen grupacije (Stella, Staropramen, Bavaria)",
+        "wines_item": "Vina:",
+        "wines_desc": "Bajilo vina - Sauvignon, Tamjanika, Cabernet Sauvignon, Rose i druge sorte",
+        "spirits_item": "Žestoka pića:",
+        "spirits_desc": "Domaći i strani brendovi",
+        "cocktails_item": "Kokteli:",
+        "cocktails_desc": "Raznovrsna ponuda osvežavajućih koktela",
+        "soft_item": "Bezalkoholna:",
+        "soft_desc": "Cedevita, Cockta, sokovi",
+        "special_item": "Specijaliteti:",
+        "special_desc": "Plazma shake",
+        "view_menu": "Pogledajte kompletnu kartu pića"
+      }
+    }
   }
 }

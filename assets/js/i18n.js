@@ -70,13 +70,19 @@
         document.querySelectorAll('[data-i18n]').forEach(function(element) {
             const key = element.getAttribute('data-i18n');
             const translation = getNestedTranslation(key);
+            const useHTML = element.getAttribute('data-i18n-html') === 'true';
 
             if (translation) {
                 // Add fade effect
                 element.style.opacity = '0';
 
                 setTimeout(function() {
-                    element.textContent = translation;
+                    // Use innerHTML if data-i18n-html="true", otherwise use textContent
+                    if (useHTML) {
+                        element.innerHTML = translation;
+                    } else {
+                        element.textContent = translation;
+                    }
                     element.style.transition = 'opacity 0.3s ease';
                     element.style.opacity = '1';
                 }, 150);
@@ -128,6 +134,8 @@
             titleKey = 'meta.title.gallery';
         } else if (path.includes('/contact') || path.includes('contact.html')) {
             titleKey = 'meta.title.contact';
+        } else if (path.includes('/faq') || path.includes('faq.html')) {
+            titleKey = 'meta.title.faq';
         }
 
         const title = getNestedTranslation(titleKey);

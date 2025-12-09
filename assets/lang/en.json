@@ -76,11 +76,11 @@
       },
       "wines": {
         "title": "Wines",
-        "text": "Bajilo wines from Subotica offer a rich selection of white, red and rosé varieties. From fresh Sauvignon and aromatic Tamjanika to full-bodied Cabernet Sauvignon - we have the right wine for every taste."
+        "text": "Bajilo wines from Sremski Karlovci offer a rich selection of white, red and rosé varieties. From fresh Sauvignon and aromatic Tamjanika to full-bodied Cabernet Sauvignon - we have the right wine for every taste."
       },
       "coffee": {
         "title": "Coffee",
-        "text": "Our Hausbrandt coffee, with its specific taste, will give you an extra burst of energy to overcome any obstacle that has befallen you that day."
+        "text": "Our Lavazza gran espresso coffee, with its specific taste, will give you an extra burst of energy to overcome any obstacle that has befallen you that day."
       }
     }
   },
@@ -118,6 +118,77 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Here you can find answers to the most common questions about Caffe Bar Art Žitište"
+    "subtitle": "Here you can find answers to the most common questions about Caffe Bar Art Žitište",
+    "questions": {
+      "location": {
+        "question": "Where is Caffe Bar Art located?",
+        "answer": "Caffe Bar Art is located in the center of Žitište at <strong>Trg Oslobođenja bb</strong>. You can easily find us in the main part of the village, at the main square."
+      },
+      "hours": {
+        "question": "What are the café's opening hours?",
+        "answer": "Our opening hours:",
+        "weekdays": "Monday - Thursday:",
+        "weekdays_hours": "08:00 - 00:00",
+        "weekend": "Friday - Saturday:",
+        "weekend_hours": "08:00 - 02:00",
+        "sunday": "Sunday:",
+        "sunday_hours": "09:00 - 00:00"
+      },
+      "garden": {
+        "question": "Do you have a garden?",
+        "answer": "<strong>Yes!</strong> We have a beautiful garden surrounded by greenery and the shade of old trees, which is a true oasis of peace in the center of Žitište. Our garden is perfect for relaxing with morning coffee or evening gatherings."
+      },
+      "coffee": {
+        "question": "What coffee do you offer?",
+        "answer": "We offer premium <strong>Lavazza gran espresso</strong> coffee which is characterized by its specific taste and excellent quality. Our coffee will give you a real boost of energy."
+      },
+      "events": {
+        "question": "Do you organize live music and entertainment?",
+        "answer": "<strong>Yes!</strong> On Fridays and Saturdays in the evening hours, we turn to faster rhythms and organize entertainment with live music, providing the best fun in the Žitište area."
+      },
+      "parking": {
+        "question": "Do you have parking?",
+        "answer": "Our café has its own parking space exclusively for our guests. The parking is located right next to the venue, so you can enjoy without worrying about a place for your car."
+      },
+      "cards": {
+        "question": "Do you accept cards?",
+        "answer": "<strong>Yes</strong>, we accept credit cards as well as cash. We accept all standard credit and debit cards."
+      },
+      "wifi": {
+        "question": "Do you have WiFi?",
+        "answer": "<strong>Yes</strong>, we offer free WiFi access to all our guests."
+      },
+      "contact": {
+        "question": "How can I contact you?",
+        "answer": "You can contact us via:",
+        "phone": "Phone:",
+        "email": "E-mail:",
+        "facebook": "Facebook:",
+        "instagram": "Instagram:"
+      },
+      "distance": {
+        "question": "How far are you from Zrenjanin?",
+        "answer": "Žitište is located about <strong>15 km from Zrenjanin</strong>, which is approximately 15-20 minutes by car. We are the closest quality café with a relaxing garden in this area."
+      },
+      "menu": {
+        "question": "What can we order from you?",
+        "answer": "We have a rich selection of drinks:",
+        "coffee_item": "Coffee:",
+        "coffee_desc": "Premium Lavazza coffee",
+        "beers_item": "Beers:",
+        "beers_desc": "Wide selection from Jelen group (Stella, Staropramen, Bavaria)",
+        "wines_item": "Wines:",
+        "wines_desc": "Bajilo wines - Sauvignon, Tamjanika, Cabernet Sauvignon, Rosé and other varieties",
+        "spirits_item": "Spirits:",
+        "spirits_desc": "Domestic and international brands",
+        "cocktails_item": "Cocktails:",
+        "cocktails_desc": "Diverse selection of refreshing cocktails",
+        "soft_item": "Non-alcoholic:",
+        "soft_desc": "Cedevita, Cockta, juices",
+        "special_item": "Specialties:",
+        "special_desc": "Plazma shake",
+        "view_menu": "View complete drinks menu"
+      }
+    }
   }
 }
