@@ -25,6 +25,7 @@
 /* Section-specific styles */
 @import url('header.css');
 @import url('home-sections.css');
+@import url('events-timeline.css');
 @import url('about.css');
 @import url('gallery.css');
 @import url('menu.css');
