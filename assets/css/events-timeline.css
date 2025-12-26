@@ -10,10 +10,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     padding: 6rem 2rem;
     position: relative;
     overflow: hidden;
+    /* Performance optimization for smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Fixed background only on desktop for parallax effect */
+@media only screen and (min-width: 1025px) {
+    .events-timeline-section {
+        background-attachment: fixed;
+    }
 }
 
 /* Decorative elements */
@@ -122,6 +133,9 @@
     margin-bottom: 3rem;
     position: relative;
     gap: 2rem;
+    /* Performance optimization */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .timeline-item:last-child {
@@ -191,6 +205,9 @@
     position: relative;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    /* Performance optimization */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .timeline-content:hover {
@@ -366,6 +383,36 @@
 @media only screen and (max-width: 768px) {
     .events-timeline-section {
         padding: 4rem 1.5rem;
+    }
+
+    /* Disable animations on mobile for better performance */
+    .marker-dot {
+        animation: none;
+    }
+
+    .marker-dot::after {
+        animation: none;
+        display: none;
+    }
+
+    .events-timeline-section::after {
+        animation: none;
+    }
+
+    /* Disable backdrop-filter on mobile - causes lag */
+    .timeline-content {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    /* Simplify hover effects for mobile */
+    .timeline-content:hover {
+        transform: none;
+    }
+
+    .program-item:hover {
+        transform: none;
+        background: rgba(255, 184, 140, 0.1);
     }
 
     .events-header {
